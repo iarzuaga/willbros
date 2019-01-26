@@ -1,0 +1,30 @@
+Jugador:
+	Moverse
+	Agarrar
+	Tirar
+	Empujar - se ve despues
+
+Objetos:
+	Levantarse
+	Soltar
+	Tirar
+
+Habitaciones
+
+Casa
+
+Camiones:
+	#Al chocar con un objeto aumentan los puntos al Jugador del camion
+
+Cerraduras y Llaves - se ve despues
+
+HUD:
+	-Contadores de puntos
+	-Contadores de tiempo
+	-Cuenta de objetos
+
+Menues
+	-Menu Principal
+	-Pausa
+	-Fin de pantalla - se ve despues
+	-Fin de partida
