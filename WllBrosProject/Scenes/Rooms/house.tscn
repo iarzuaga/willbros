@@ -16,7 +16,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 
 size = 50
 use_mipmaps = false
@@ -24,7 +24,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 
 size = 50
 use_mipmaps = false
@@ -36,6 +36,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="camera" type="Camera2D" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( 510.331, 298.982 )
 anchor_mode = 1
 rotating = false
@@ -160,7 +161,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -195,7 +196,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
