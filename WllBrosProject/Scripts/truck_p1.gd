@@ -1,11 +1,19 @@
-extends Area2D
+extends KinematicBody2D
 
 var score = 0
 
 func _process(delta):
+	var area = $drop_area
+	var obj = area.get_overlapping_bodies()
 	
-	#var col = get_slide_collision(get_slide_count() -1)
-	#var nod = get_node(col)
-	pass
+	if obj:
+		print(obj[0])
+		if obj[0].is_in_group("object") or true:
+		  var value = obj[0].value
+		  score += value
+		  print(score)
+		  obj[0].get_parent().remove_child(obj[0])
+		
+			
 	
 	

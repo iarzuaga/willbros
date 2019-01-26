@@ -26,7 +26,6 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 velocity = Vector2( 0, 0 )
 speed = 1800
-vel_i = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="player" index="0"]
 
@@ -55,5 +54,12 @@ scale = Vector2( 1.00949, 1 )
 shape = SubResource( 2 )
 
 [node name="object" parent="." index="1" instance=ExtResource( 3 )]
+
+value = 45
+
+[node name="object2" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 361.905, 208.787 )
+value = 64
 
 
