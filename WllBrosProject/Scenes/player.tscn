@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Placeholder/Sprite-red.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 21.4953 )
+extents = Vector2( 10, 15.7097 )
 
-[node name="player" type="KinematicBody2D"]
+[node name="player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -20,14 +20,16 @@ velocity = Vector2( 0, 0 )
 speed = 1800
 vel_i = Vector2( 0, 0 )
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.320566, 0.266124 )
+position = Vector2( -0.00451732, -48.5889 )
+scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="collider" type="CollisionShape2D" parent="." index="1"]
 
-scale = Vector2( 1, 0.385387 )
+position = Vector2( 0, -2.46151 )
+scale = Vector2( 2.1969, 1.22177 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

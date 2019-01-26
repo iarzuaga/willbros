@@ -61,8 +61,10 @@ motion_mirroring = Vector2( 0, 0 )
 
 [node name="background" type="Sprite" parent="camera/CanvasLayer/ParallaxBackground/ParallaxLayer" index="0"]
 
-position = Vector2( 505.324, 300.932 )
-scale = Vector2( 0.471537, 0.471538 )
+position = Vector2( 501.119, 300.932 )
+scale = Vector2( 0.863115, 0.863115 )
 texture = ExtResource( 1 )
+
+[node name="colliders" type="Node" parent="." index="1"]
 
 

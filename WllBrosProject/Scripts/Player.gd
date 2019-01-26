@@ -3,8 +3,8 @@ extends KinematicBody2D
 export var velocity = Vector2()
 export var speed = 1800
 export var vel_i = Vector2(0,0)
-func _ready():
 
+func _ready():
 	pass
 	
 func _physics_process(delta):
