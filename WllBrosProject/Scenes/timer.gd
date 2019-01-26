@@ -15,7 +15,7 @@ func _process(delta):
 		second = 59
 	
 		
-	if minute > 0:
+	if minute >= 0:
 		set_text(str(minute)+":"+str(second))
 	
 	pass

@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 10.0
 height = 20.0
 
-[node name="player" type="Node" index="0"]
+[node name="player" type="Node"]
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
