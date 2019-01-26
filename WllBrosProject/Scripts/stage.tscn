@@ -11,6 +11,56 @@ grab_distance = 50
 drop_distance = 60
 throw_force = 500
 
-[node name="object" parent="." index="1" instance=ExtResource( 2 )]
+custom_solver_bias = 0.0
+extents = Vector2( 10, 31.7024 )
+
+[node name="player" type="Node"]
+
+[node name="player" type="KinematicBody2D" parent="." index="0"]
+
+position = Vector2( 151, 116 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+velocity = Vector2( 0, 0 )
+speed = 1800
+
+[node name="Sprite" type="Sprite" parent="player" index="0"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" index="1"]
+
+position = Vector2( -0.177974, 0.00660348 )
+scale = Vector2( 3.20966, 3.19731 )
+shape = SubResource( 1 )
+
+[node name="pick_area" type="Area2D" parent="player" index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/pick_area" index="0"]
+
+position = Vector2( 46.4155, 0 )
+scale = Vector2( 1.00949, 1 )
+shape = SubResource( 2 )
+
+[node name="object" parent="." index="1" instance=ExtResource( 3 )]
+
+
+value = 45
+
+[node name="object2" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 361.905, 208.787 )
+value = 64
 
 
