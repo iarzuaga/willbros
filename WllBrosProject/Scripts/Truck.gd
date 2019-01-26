@@ -8,7 +8,7 @@ func _process(delta):
 	
 	if obj:
 		print(obj[0])
-		if obj[0].is_in_group("object") or true:
+		if obj[0].is_in_group("object"):
 		  var value = obj[0].value
 		  score += value
 		  obj[0].get_parent().remove_child(obj[0])

@@ -32,7 +32,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="home_1" type="Node" index="0"]
+[node name="home_1" type="Node"]
 
 [node name="camera" type="Camera2D" parent="." index="0"]
 
@@ -178,6 +178,7 @@ score_p1 = 0
 
 [node name="timer" type="RichTextLabel" parent="." index="4"]
 
+editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
