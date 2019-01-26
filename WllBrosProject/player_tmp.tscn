@@ -23,7 +23,8 @@ script = ExtResource( 1 )
 velocity = Vector2( 0, 0 )
 speed = 1800
 grab_distance = 50
-drop_distance = 50
+drop_distance = 60
+throw_force = 500
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

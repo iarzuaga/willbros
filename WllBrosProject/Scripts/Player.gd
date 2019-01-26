@@ -3,7 +3,8 @@ extends KinematicBody2D
 export var velocity = Vector2()
 export var speed = 1800
 export var grab_distance = 50
-export var drop_distance = 50
+export var drop_distance = 60
+export var throw_force = 500
 onready var vel_i = Vector2(0, 0)
 onready var object_grabbed = [] 
 onready var direction = Vector2(0, 1)
@@ -40,16 +41,17 @@ func _physics_process(delta):
 	vel_i = speed * vel_i.normalized()
 	
 	if Input.is_action_just_pressed("Interact"):
-		print(object_grabbed)
+
 		if object_grabbed:
+			object_grabbed[0].position = direction * drop_distance + self.position
+			self.get_parent().add_child(object_grabbed[0])
+			
 			if vel_i:
-				##throw
+				object_grabbed[0].acceleration = direction * throw_force
 				pass
-			else:
-				print(direction)
-				object_grabbed[0].position = direction * drop_distance + self.position
-				self.get_parent().add_child(object_grabbed[0])
-				object_grabbed.remove(0)
+			
+			object_grabbed.remove(0)
+			
 		else:
 			if grab_zone.get_overlapping_bodies():
 				var object = grab_zone.get_overlapping_bodies()[0]
