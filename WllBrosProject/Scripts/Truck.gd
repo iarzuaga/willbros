@@ -5,12 +5,11 @@ var score = 0
 
 func _process(delta):
 	var area = $drop_area
-	var obj = area.get_overlapping_bodies()
+	var obj_list = area.get_overlapping_bodies()
 	
-	if obj:
-		print(obj[0])
-		if obj[0].is_in_group("object"):
-			var value = obj[0].value
+	for obj in obj_list:
+		if obj.is_in_group("object"):
+			var value = obj.value
 			score += value
 			point_label.set_score(score)
-			obj[0].get_parent().remove_child(obj[0])
+			obj.get_parent().remove_child(obj)

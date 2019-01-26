@@ -8,7 +8,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 15.8739, 8.87921 )
 
-[node name="fridge" type="KinematicBody2D"]
+[node name="fridge" type="KinematicBody2D" groups=[
+"object",
+]]
 
 input_pickable = false
 collision_layer = 1

@@ -7,7 +7,7 @@
 [ext_resource path="res://Scripts/room_randomizer.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/Placeholder/box.png" type="Texture" id=6]
 
-[node name="game_manager" type="Node" index="0"]
+[node name="game_manager" type="Node"]
 
 script = ExtResource( 1 )
 
