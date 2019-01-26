@@ -11,13 +11,25 @@ config_version=3
 [application]
 
 config/name="WllBros"
-run/main_scene="res://Scenes/house.tscn"
-config/icon="res://icon.png"
 
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+run/main_scene="res://Scripts/stage.tscn"
+config/icon="res://icon.png"
+
+[input]
+
+up=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
+ ]
+down=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":1.0,"script":null)
+ ]
+left=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":-1.0,"script":null)
+ ]
+rigth=[ Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":0,"axis_value":1.0,"script":null)
+ ]
 
 [rendering]
 
