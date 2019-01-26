@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var velocity = Vector2()
-export var speed = 800
+export var speed = 1800
 export var vel_i = Vector2(0,0)
 onready var object_grabbed = [] 
 func _ready():
@@ -12,18 +12,18 @@ func _physics_process(delta):
 	vel_i = Vector2(0,0)
 	velocity = Vector2(0, 0)
 	
-	if Input.is_action_pressed("Up"):
+	if Input.is_action_pressed("up"):
 		vel_i.y -=1
 		
-	if Input.is_action_pressed("Down"):
+	if Input.is_action_pressed("down"):
 		vel_i.y +=1
 		
-	if Input.is_action_pressed("Left"):
-		vel_i.x +=1
-		
-	if Input.is_action_pressed("Rigth"):
+	if Input.is_action_pressed("left"):
 		vel_i.x -=1
 		
+	if Input.is_action_pressed("right"):
+		vel_i.x +=1
+	
 	vel_i = speed * vel_i.normalized()
 	
 	if Input.is_action_just_pressed("Interact"):
@@ -50,6 +50,3 @@ func _physics_process(delta):
 	velocity.y = lerp(velocity.y, vel_i.y, 0.1)
 	move_and_slide(velocity, Vector2(0,0), 25.0)
 	
-	
-
-
