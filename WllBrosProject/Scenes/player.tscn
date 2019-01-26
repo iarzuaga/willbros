@@ -24,11 +24,23 @@ speed = 1800
 position = Vector2( -0.00451732, -48.5889 )
 scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="collider" type="CollisionShape2D" parent="." index="1"]
+[node name="sprite2" type="Sprite" parent="." index="1"]
 
-position = Vector2( 0, -2.46151 )
-scale = Vector2( 2.1969, 1.22177 )
+position = Vector2( 0, -59.5 )
+scale = Vector2( 1.57727, 1.57727 )
+z_index = 1
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 48.5 )
+region_filter_clip = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="collider" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 0, -10.3735 )
+scale = Vector2( 2.1969, 0.798888 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
