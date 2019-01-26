@@ -6,6 +6,7 @@ export var object_weight = 0
 
 var acceleration = Vector2(0,0)
 var velocity = Vector2(0,0)
+var direction = Vector2(1,0)
 
 func _ready():
 	pass
@@ -29,7 +30,8 @@ func _physics_process(delta):
 			var brother_full = object_person_collision.get_collider_shape().get_parent()
 			if  brother_full.is_in_group("brother"):
 				if brother_full.object_grabbed:
-					print("object attack when full")
+					self.direction = deceleration.normalized()
+					brother_full.interact(brother_full.object_grabbed, self)
 				else:
 					print("object attack while free")
 					
