@@ -26,4 +26,8 @@ stun = 10
 
 position = Vector2( 259.142, 93.7824 )
 
+[node name="object2" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 564.142, 145.782 )
+
 
