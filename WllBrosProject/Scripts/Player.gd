@@ -63,10 +63,10 @@ func _physics_process(delta):
 	
 	if play_two:
 		if Input.is_action_just_pressed("Interact_2"):
-			interact(object_grabbed)
+			interact(object_grabbed, null)
 	else:
 		if Input.is_action_just_pressed("Interact"):
-			interact(object_grabbed)
+			interact(object_grabbed, null)
 		
 
 	if play_two:
@@ -80,12 +80,23 @@ func _physics_process(delta):
 	velocity.y = lerp(velocity.y, vel_i.y, 0.1)
 	move_and_slide(velocity, Vector2(0,0), 25.0)
 	
-func interact(object_grabbed):
+func interact(object_grabbed, attacked):
+	var interact_position
 	if object_grabbed:
-		object_grabbed[0].position = direction * drop_distance + self.position
+		if attacked:
+			interact_position = attacked.position
+			direction = attacked.direction
+		else:
+			interact_position = self.position
+			
+		object_grabbed[0].position = direction * drop_distance + interact_position
 		self.get_parent().add_child(object_grabbed[0])
 		
 		if vel_i:
+			object_grabbed[0].acceleration = direction * throw_force
+			pass
+		
+		if attacked:
 			object_grabbed[0].acceleration = direction * throw_force
 			pass
 		
@@ -103,6 +114,6 @@ func attack():
 	if attack_action:
 		var brother_full = attack_action.get_collider_shape().get_parent()
 		if brother_full.object_grabbed:
-			brother_full.interact(brother_full.object_grabbed)
+			brother_full.interact(brother_full.object_grabbed, self)
 
 		
