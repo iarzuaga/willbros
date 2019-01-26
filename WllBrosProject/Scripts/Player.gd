@@ -7,51 +7,60 @@ export var grab_distance = 50
 export var drop_distance = 60
 export var throw_force = 500
 export var play_two = false
+export var stun = 0
 
 onready var vel_i = Vector2(0, 0)
 onready var object_grabbed = [] 
 onready var direction = Vector2(0, 1)
 onready var grab_zone = $pick_area
 onready var attack_vel = Vector2(0, 0)
+var recovery = 0
 
 func _ready():
 	pass
  
 func _physics_process(delta):
+	if stun:
+		recovery += delta
+		if recovery > stun:
+			stun = 0
+			recovery = 0
+
 	vel_i = Vector2(0,0)
 	velocity = Vector2(0, 0)
 	
-	if not play_two:
-	
-		if Input.is_action_pressed("up"):
-			vel_i.y -=1
-			
-			
-		if Input.is_action_pressed("down"):
-			vel_i.y +=1
-			
-			
-		if Input.is_action_pressed("left"):
-			vel_i.x -=1
-			
-			
-		if Input.is_action_pressed("right"):
-			vel_i.x +=1
-	else:
-		if Input.is_action_pressed("up_2"):
-			vel_i.y -=1
-			
-			
-		if Input.is_action_pressed("down_2"):
-			vel_i.y +=1
-			
-			
-		if Input.is_action_pressed("left_2"):
-			vel_i.x -=1
-			
-			
-		if Input.is_action_pressed("right_2"):
-			vel_i.x +=1
+	if not stun:
+		if not play_two:
+		
+			if Input.is_action_pressed("up"):
+				vel_i.y -=1
+				
+				
+			if Input.is_action_pressed("down"):
+				vel_i.y +=1
+				
+				
+			if Input.is_action_pressed("left"):
+				vel_i.x -=1
+				
+				
+			if Input.is_action_pressed("right"):
+				vel_i.x +=1
+		else:
+			if Input.is_action_pressed("up_2"):
+				vel_i.y -=1
+				
+				
+			if Input.is_action_pressed("down_2"):
+				vel_i.y +=1
+				
+				
+			if Input.is_action_pressed("left_2"):
+				vel_i.x -=1
+				
+				
+			if Input.is_action_pressed("right_2"):
+				vel_i.x +=1
 	
 	grab_zone.look_at(self.position)
 	
@@ -61,20 +70,21 @@ func _physics_process(delta):
 		
 	vel_i = speed * vel_i.normalized()
 	
-	if play_two:
-		if Input.is_action_just_pressed("Interact_2"):
-			interact(object_grabbed, null)
-	else:
-		if Input.is_action_just_pressed("Interact"):
-			interact(object_grabbed, null)
+	if not stun:
+		if play_two:
+			if Input.is_action_just_pressed("Interact_2"):
+				interact(object_grabbed, null)
+		else:
+			if Input.is_action_just_pressed("Interact"):
+				interact(object_grabbed, null)
 		
-
-	if play_two:
-		if Input.is_action_just_pressed("Attack_2"):
-			attack()
-	else:
-		if Input.is_action_just_pressed("Attack"):
-			attack()
+	if not stun:
+		if play_two:
+			if Input.is_action_just_pressed("Attack_2"):
+				attack()
+		else:
+			if Input.is_action_just_pressed("Attack"):
+				attack()
 			
 	velocity.x = lerp(velocity.x, vel_i.x, 0.1)
 	velocity.y = lerp(velocity.y, vel_i.y, 0.1)
@@ -97,6 +107,7 @@ func interact(object_grabbed, attacked):
 			pass
 		
 		if attacked:
+			self.stun = 2
 			object_grabbed[0].acceleration = direction * throw_force
 			pass
 		
