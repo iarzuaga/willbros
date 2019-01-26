@@ -113,7 +113,7 @@ func attack():
 	var attack_action = move_and_collide(attack_vel)
 	if attack_action:
 		var brother_full = attack_action.get_collider_shape().get_parent()
-		if brother_full.object_grabbed:
+		if  brother_full.is_in_group("brother") and brother_full.object_grabbed:
 			brother_full.interact(brother_full.object_grabbed, self)
 
 		
