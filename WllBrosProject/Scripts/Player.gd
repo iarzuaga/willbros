@@ -42,6 +42,10 @@ func _physics_process(delta):
 				object_grabbed.append(object)
 				object.get_parent().remove_child(object)
 	
+	if Input.is_action_just_pressed("Attack"):
+		vel_i = speed * 100 * vel_i.normalized()
+		pass
+	
 	velocity.x = lerp(velocity.x, vel_i.x, 0.1)
 	velocity.y = lerp(velocity.y, vel_i.y, 0.1)
 	move_and_slide(velocity, Vector2(0,0), 25.0)
