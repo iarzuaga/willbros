@@ -20,7 +20,7 @@ collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 velocity = Vector2( 0, 0 )
-speed = 800
+speed = 1800
 vel_i = Vector2( 0, 0 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D" index="0"]
