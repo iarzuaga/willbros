@@ -9,22 +9,29 @@ export var throw_force = 500
 export var play_two = false
 export var stun = 0
 
+
 onready var vel_i = Vector2(0, 0)
 onready var object_grabbed = [] 
 onready var direction = Vector2(0, 1)
 onready var grab_zone = $pick_area
 onready var attack_vel = Vector2(0, 0)
-var recovery = 0
+
+
+
+var jump_stun = 0
 
 func _ready():
 	pass
  
 func _physics_process(delta):
 	if stun:
-		recovery += delta
-		if recovery > stun:
+		stun -= delta
+		if  stun < 0:
 			stun = 0
-			recovery = 0
+	if jump_stun:
+		jump_stun -= delta
+		if  jump_stun < 0:
+			jump_stun = 0
 
 	vel_i = Vector2(0,0)
 	velocity = Vector2(0, 0)
@@ -81,10 +88,14 @@ func _physics_process(delta):
 	if not stun:
 		if play_two:
 			if Input.is_action_just_pressed("Attack_2"):
-				attack()
+				if not self.jump_stun:
+					attack()
+					jump_stun = 2
 		else:
 			if Input.is_action_just_pressed("Attack"):
-				attack()
+				if not self.jump_stun:
+					attack()
+					jump_stun = 2
 			
 	velocity.x = lerp(velocity.x, vel_i.x, 0.1)
 	velocity.y = lerp(velocity.y, vel_i.y, 0.1)
@@ -121,7 +132,7 @@ func interact(object_grabbed, attacked):
 			
 func attack():
 	if not self.object_grabbed:
-		attack_vel = speed * 0.10 * vel_i.normalized()
+		attack_vel = speed * 0.05 * vel_i.normalized()
 		var attack_action = move_and_collide(attack_vel)
 		if attack_action:
 			var brother_full = attack_action.get_collider_shape().get_parent()
