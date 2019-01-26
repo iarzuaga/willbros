@@ -109,11 +109,12 @@ func interact(object_grabbed, attacked):
 			object.get_parent().remove_child(object)
 			
 func attack():
-	attack_vel = speed * 0.10 * vel_i.normalized()
-	var attack_action = move_and_collide(attack_vel)
-	if attack_action:
-		var brother_full = attack_action.get_collider_shape().get_parent()
-		if  brother_full.is_in_group("brother") and brother_full.object_grabbed:
-			brother_full.interact(brother_full.object_grabbed, self)
+	if not self.object_grabbed:
+		attack_vel = speed * 0.10 * vel_i.normalized()
+		var attack_action = move_and_collide(attack_vel)
+		if attack_action:
+			var brother_full = attack_action.get_collider_shape().get_parent()
+			if  brother_full.is_in_group("brother") and brother_full.object_grabbed:
+				brother_full.interact(brother_full.object_grabbed, self)
 
 		
