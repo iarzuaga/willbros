@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/muebles.png-1b69d1cb5fc4cdadf9167a401a4518c6.stex"
+path="res://.import/muebles.png-c9c82036d99e2b7ae97142e891edd88b.stex"
 
 [deps]
 
-source_file="res://Sprites/muebles.png"
-dest_files=[ "res://.import/muebles.png-1b69d1cb5fc4cdadf9167a401a4518c6.stex" ]
+source_file="res://Sprites/Placeholder/muebles.png"
+dest_files=[ "res://.import/muebles.png-c9c82036d99e2b7ae97142e891edd88b.stex" ]
 
 [params]
 

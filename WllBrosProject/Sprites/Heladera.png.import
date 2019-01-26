@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blood_hit_04.png-35144bc412a5b92ae8c563982f65461a.stex"
+path="res://.import/Heladera.png-540872286525fe7054ccbc0e2780c17a.stex"
 
 [deps]
 
-source_file="res://Sprites/blood_hit_04.png"
-dest_files=[ "res://.import/blood_hit_04.png-35144bc412a5b92ae8c563982f65461a.stex" ]
+source_file="res://Sprites/Heladera.png"
+dest_files=[ "res://.import/Heladera.png-540872286525fe7054ccbc0e2780c17a.stex" ]
 
 [params]
 
