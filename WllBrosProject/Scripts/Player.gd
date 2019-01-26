@@ -10,9 +10,9 @@ export var throw_force = 500
 onready var vel_i = Vector2(0, 0)
 onready var object_grabbed = [] 
 onready var direction = Vector2(0, 1)
+
 func _ready():
- 
- pass
+	pass
  
 func _physics_process(delta):
 	var grab_zone = $pick_area

@@ -1,15 +1,15 @@
-extends Area2D
+extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var score = 0
 
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	var area = $drop_area
+	var obj = area.get_overlapping_bodies()
+	
+	if obj:
+		print(obj[0])
+		if obj[0].is_in_group("object") or true:
+		  var value = obj[0].value
+		  score += value
+		  print(value)
+		  obj[0].get_parent().remove_child(obj[0])
