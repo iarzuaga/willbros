@@ -11,12 +11,12 @@ config_version=3
 [application]
 
 config/name="WllBros"
+run/main_scene="res://Scenes/house.tscn"
 
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
-
 run/main_scene="res://Scripts/stage.tscn"
 config/icon="res://icon.png"
 
