@@ -10,9 +10,6 @@ func _process(delta):
 	
 	if minute >= 0:
 		set_text(str(minute)+":"+str(second))
-	
-
-
 
 func _on_second_timeout():
 	second -= 1
