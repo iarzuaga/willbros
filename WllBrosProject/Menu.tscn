@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Placeholder/image (1).png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Placeholder/image.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/DS-DIGIT.TTF" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 70
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Settings" ]
+
+[node name="Menu" type="Node" index="0"]
+
+script = ExtResource( 1 )
+press1 = false
+press2 = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer" index="0"]
+
+position = Vector2( 560.931, 505.63 )
+scale = Vector2( 1.66123, 1.66123 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer" index="1"]
+
+position = Vector2( 1318.38, 494.854 )
+scale = Vector2( 1.78884, 1.5421 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="CanvasLayer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 282.0
+margin_top = 889.0
+margin_right = 881.0
+margin_bottom = 960.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Press \"A\" to select"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="CanvasLayer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1026.0
+margin_top = 888.0
+margin_right = 1625.0
+margin_bottom = 959.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Press \"A\" to select"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+
