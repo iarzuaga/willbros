@@ -33,7 +33,7 @@ func _physics_process(delta):
 					self.direction = deceleration.normalized()
 					brother_full.interact(brother_full.object_grabbed, self)
 				else:
-					print("object attack while free")
+					brother_full.stun = 2
 					
 			
 		self.move_and_slide(velocity)
