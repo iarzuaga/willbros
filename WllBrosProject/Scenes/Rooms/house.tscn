@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/Placeholder/holdermap.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/truck.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/score.gd" type="Script" id=3]
+[ext_resource path="res://Fonts/DS-DIGIT.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/score.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/timer.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -14,11 +16,26 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="home_1" type="Node"]
+[sub_resource type="DynamicFont" id=4]
+
+size = 50
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 50
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="home_1" type="Node" index="0"]
 
 [node name="camera" type="Camera2D" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 510.331, 298.982 )
 anchor_mode = 1
 rotating = false
@@ -45,7 +62,6 @@ editor_draw_drag_margin = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="camera" index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -126,22 +142,25 @@ position = Vector2( -0.373386, -49.2359 )
 scale = Vector2( 0.863307, 5.29428 )
 shape = SubResource( 2 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." index="3"]
+[node name="points" type="RichTextLabel" parent="." index="3"]
 
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -171.0
-margin_top = -167.0
-margin_right = -131.0
-margin_bottom = -127.0
+margin_left = -112.0
+margin_top = -90.0
+margin_right = -5.0
+margin_bottom = 17.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 4 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -153,7 +172,50 @@ scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-script = ExtResource( 3 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
 score_p1 = 0
+
+[node name="timer" type="RichTextLabel" parent="." index="4"]
+
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -303.0
+margin_top = 266.0
+margin_right = -42.0
+margin_bottom = 356.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = ""
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+script = ExtResource( 5 )
+_sections_unfolded = [ "Visibility", "custom_fonts" ]
+
+[node name="second" type="Timer" parent="timer" index="1"]
+
+process_mode = 1
+wait_time = 1.04
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="timer/second" to="timer" method="_on_second_timeout"]
 
 
