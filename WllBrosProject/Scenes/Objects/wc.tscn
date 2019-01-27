@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/object.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Jarra.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Waterclo.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.8739, 8.87921 )
+extents = Vector2( 9.41706, 8.87921 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 8.56158, 10 )
 
 [node name="tv" type="KinematicBody2D" index="0" groups=[
 "object",
@@ -34,24 +34,32 @@ sprite_direction = 0
 position = Vector2( 0, 3.28349 )
 scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
+hframes = 3
+frame = 2
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="col_0" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.11401, 27.3262 )
-scale = Vector2( 3.19369, 3.02903 )
+position = Vector2( 0.11401, 12.9143 )
+scale = Vector2( 3.19369, 1.80121 )
 shape = SubResource( 1 )
 
 [node name="col_1" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -0.129424, 12.5237 )
-scale = Vector2( 3.04061, 4.12024 )
+position = Vector2( -0.129424, -1.71453 )
+scale = Vector2( 3.04061, 3.02499 )
 shape = SubResource( 2 )
 
 [node name="col_2" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( 0.639605, 26.9295 )
-scale = Vector2( 2.20333, 3.0181 )
+position = Vector2( 0.124286, 12.8677 )
+scale = Vector2( 2.24483, 1.81975 )
 shape = SubResource( 1 )
+
+[node name="col_3" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( -0.129424, -1.71453 )
+scale = Vector2( 3.04061, 3.02499 )
+shape = SubResource( 2 )
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/object.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/OtraCamaUnaPlazaQueEsUnRoboDePlataTerrible.png" type="Texture" id=2]
@@ -6,7 +6,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.9663, 8.87921 )
+extents = Vector2( 16.0901, 7.97594 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8.77517, 12.0218 )
 
 [node name="object" type="KinematicBody2D" index="0" groups=[
 "object",
@@ -26,14 +31,37 @@ sprite_direction = 0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0, 2.28349 )
+position = Vector2( 0, 14.6124 )
 scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
-hframes = 4
-_sections_unfolded = [ "Animation", "Transform" ]
+hframes = 3
+frame = 2
+_sections_unfolded = [ "Animation", "Region", "Transform" ]
 
-[node name="collision" type="CollisionShape2D" parent="." index="1"]
+[node name="col_0" type="CollisionShape2D" parent="." index="1"]
 
+visible = false
+position = Vector2( -0.068175, 32.5519 )
+scale = Vector2( 1.58978, 4.53432 )
+shape = SubResource( 1 )
+
+[node name="col_1" type="CollisionShape2D" parent="." index="2"]
+
+visible = false
+position = Vector2( -0.26506, 20.5611 )
+scale = Vector2( 5.79277, 1.63257 )
+shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="col_2" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 0.199844, 32.9091 )
+scale = Vector2( 1.60381, 4.09165 )
+shape = SubResource( 1 )
+
+[node name="col_3" type="CollisionShape2D" parent="." index="4"]
+
+visible = false
 position = Vector2( 12.3572, 19.3135 )
 scale = Vector2( 1.58472, 3.74842 )
 shape = SubResource( 1 )

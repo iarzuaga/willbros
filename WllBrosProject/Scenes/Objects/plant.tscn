@@ -31,7 +31,7 @@ scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="collision" type="CollisionShape2D" parent="." index="1"]
+[node name="col_0" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 0.0756667, 26.85 )
 scale = Vector2( 1.56393, 2.79888 )
