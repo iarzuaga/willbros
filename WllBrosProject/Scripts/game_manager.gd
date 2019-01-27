@@ -1,5 +1,11 @@
 extends Node
 
+onready var room_container = get_node("room_container")
+
 func _process(delta):
-	if Input.is_action_pressed("close_game"):
-		get_tree().exit()
+	if Input.is_action_just_pressed("close_game"):
+		reset()
+		#get_tree().exit()
+
+func reset():
+	room_container.randomize()

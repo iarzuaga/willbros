@@ -21,10 +21,12 @@ onready var attack_vel = Vector2(0, 0)
 var jump_stun = 0
 var throw_stun = 0
 
+
 func _ready():
 	pass
  
 func _physics_process(delta):
+				
 	if stun:
 		stun -= delta
 		if  stun < 0:
@@ -101,6 +103,7 @@ func _physics_process(delta):
 				if not self.jump_stun:
 					attack()
 					jump_stun = 2
+		
 			
 	velocity.x = lerp(velocity.x, vel_i.x, 0.1)
 	velocity.y = lerp(velocity.y, vel_i.y, 0.1)
@@ -125,12 +128,15 @@ func interact(object_grabbed, attacked):
 			object_grabbed.remove(0)
 			self.throw_stun = 3
 		
-		
 	else:
 		if grab_zone.get_overlapping_bodies():
-			var object = grab_zone.get_overlapping_bodies()[0]
-			object_grabbed.append(object)
-			object.get_parent().remove_child(object)
+			var bodies = grab_zone.get_overlapping_bodies()
+			
+			for object in bodies:
+				if object.is_in_group("object"):
+					object_grabbed.append(object)
+					object.get_parent().remove_child(object)
+					break
 			
 func attack():
 	if not self.object_grabbed:
@@ -142,4 +148,5 @@ func attack():
 				brother_full.move_and_slide(attack_vel)
 				brother_full.interact(brother_full.object_grabbed, self)
 
-		
+
+

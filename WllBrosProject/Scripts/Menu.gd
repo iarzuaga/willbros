@@ -17,7 +17,7 @@ func _process(delta):
 		 
 	elif press1 == true and press2 == true:
 		if load_time <= 0 :
-			 get_tree().change_scene("res://Scenes/game_manager.tscn")
+			get_tree().change_scene("res://Scenes/game_manager.tscn")
 		else:
 			load_time -= delta
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blood_hit_04.png-35144bc412a5b92ae8c563982f65461a.stex"
+path="res://.import/wall_l.png-99df0b9d6f83c2eb829768528910d8d5.stex"
 
 [deps]
 
-source_file="res://Sprites/blood_hit_04.png"
-dest_files=[ "res://.import/blood_hit_04.png-35144bc412a5b92ae8c563982f65461a.stex" ]
+source_file="res://Sprites/Placeholder/wall_l.png"
+dest_files=[ "res://.import/wall_l.png-99df0b9d6f83c2eb829768528910d8d5.stex" ]
 
 [params]
 
