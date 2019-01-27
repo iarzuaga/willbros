@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/winer_stage.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/winer.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/redmond.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/HolidayFree.otf" type="DynamicFontData" id=7]
 [ext_resource path="res://Scenes/RichTextLabel.gd" type="Script" id=8]
+[ext_resource path="res://Sprites/creditos.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -93,5 +94,13 @@ selection_enabled = false
 override_selected_font_color = false
 script = ExtResource( 8 )
 _sections_unfolded = [ "BBCode", "Visibility" ]
+
+[node name="Creditos" type="Sprite" parent="." index="2"]
+
+visible = false
+position = Vector2( 959, 539 )
+z_index = 5
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 
