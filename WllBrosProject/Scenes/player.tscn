@@ -1,8 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Placeholder/Sprite-red.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/redmon.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Placeholder/caja placeholders.png" type="Texture" id=3]
+[ext_resource path="res://animation/donw_pick_up.tres" type="Animation" id=4]
+[ext_resource path="res://animation/down.tres" type="Animation" id=5]
+[ext_resource path="res://animation/push_down.tres" type="Animation" id=6]
+[ext_resource path="res://animation/push_up.tres" type="Animation" id=7]
+[ext_resource path="res://animation/said.tres" type="Animation" id=8]
+[ext_resource path="res://animation/said_pick_up.tres" type="Animation" id=9]
+[ext_resource path="res://animation/said_push.tres" type="Animation" id=10]
+[ext_resource path="res://animation/up.tres" type="Animation" id=11]
+[ext_resource path="res://animation/up_pick_up.tres" type="Animation" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -13,6 +22,7 @@ extents = Vector2( 10, 15.7097 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 7.12863, 21.019 )
+
 
 [node name="player" type="KinematicBody2D" index="0" groups=[
 "brother",
@@ -36,18 +46,24 @@ play_two = false
 position = Vector2( -0.00451732, -48.5889 )
 scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+vframes = 3
+hframes = 7
+frame = 5
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="sprite_up" type="Sprite" parent="." index="1"]
 
+visible = false
 position = Vector2( 0, -59.5 )
 scale = Vector2( 1.57727, 1.57727 )
 z_index = 1
 texture = ExtResource( 2 )
+vframes = 3
+hframes = 7
 region_enabled = true
 region_rect = Rect2( 0, 0, 64, 48.5 )
 region_filter_clip = true
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="collider" type="CollisionShape2D" parent="." index="2"]
 
@@ -77,5 +93,23 @@ _sections_unfolded = [ "Visibility" ]
 position = Vector2( -0.0968895, -0.182941 )
 scale = Vector2( 0.443758, 1 )
 texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/donw_pick_up = ExtResource( 4 )
+anims/down = ExtResource( 5 )
+anims/push_down = ExtResource( 6 )
+anims/push_up = ExtResource( 7 )
+anims/said = ExtResource( 8 )
+anims/said_pick_up = ExtResource( 9 )
+anims/said_push = ExtResource( 10 )
+anims/up = ExtResource( 11 )
+anims/up_pick_up = ExtResource( 12 )
+blend_times = [  ]
 
 
