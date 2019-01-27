@@ -1,7 +1,7 @@
 extends RichTextLabel
 
 func _process(delta):
-	set_data(270, 250, ["caja", "palo", "rata"], [250, 300, 100])
+	set_data(200, 250, ["caja", "palo", "rata"], [250, 300, 100])
 	pass
 
 #@param score int (puntos dentro de truck al final del tiempo)

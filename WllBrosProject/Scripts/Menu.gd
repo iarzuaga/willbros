@@ -3,6 +3,9 @@ extends Node
 export var press1 = false
 export var press2 = false
 var load_time = 1
+func _ready():
+	var play = get_node("res://Scenes/Sound.tscn/Node/base")
+	print(play)
 
 func _process(delta):
 	
@@ -17,7 +20,7 @@ func _process(delta):
 		 
 	elif press1 == true and press2 == true:
 		$CanvasLayer/go.visible = true
-		if load_time <= 0 :
+		if load_time <= 0 :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
 			get_tree().change_scene("res://Scenes/tuto.tscn")
 			
 		else:

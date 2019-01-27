@@ -5,7 +5,7 @@ var option = ""
 var can_select = true
 
 func _process(delta):
-	set_data(200, 150, ["caja", "palo", "rata"])
+	set_data(200, 350, ["caja", "palo", "rata"])
 	
 	
 	if (Input.is_action_just_pressed("Interact") or Input.is_action_just_pressed("Interact_2")) and can_select or option == "new_game":
