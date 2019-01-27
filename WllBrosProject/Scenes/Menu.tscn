@@ -8,7 +8,7 @@
 [ext_resource path="res://Sprites/press a v2.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/titulo.png" type="Texture" id=7]
 
-[node name="Menu" type="Node" index="0"]
+[node name="Menu" type="Node"]
 
 script = ExtResource( 1 )
 press1 = false

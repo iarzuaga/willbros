@@ -3,7 +3,7 @@ extends Node
 var load_time = 2
 var option = ""
 var can_select = true
-
+var is_showing = false
 
 
 func _process(delta):	
@@ -26,7 +26,15 @@ func _process(delta):
 			
 		can_select = false
 		option = "main_menu"
-
+		
+	if Input.is_action_just_pressed("Select"):
+		if is_showing:
+			$Creditos.visible=false
+			is_showing = false
+		else:
+			is_showing = true
+			$Creditos.visible=true
+		
 
 #@param score int (puntos dentro de truck al final del tiempo)
 #@param score1 int (puntos dentro de truck2 al final del tiempo)
