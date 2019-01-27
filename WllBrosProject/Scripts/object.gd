@@ -6,7 +6,7 @@ export var object_weight = 0
 
 export var change_collider = false
 export var invert_h = false
-export var sprite_direction = 0
+export var sprite_direction = 1
 """
 	0 - up
 	1 - right
@@ -14,11 +14,13 @@ export var sprite_direction = 0
 	3 - left
 """
 
+var current_collider = null
+var collider_disabled = false
 var acceleration = Vector2(0,0)
 var velocity = Vector2(0,0)
 var direction = Vector2(1,0)
 
-var old_sprite_direction = null
+var old_sprite_direction = -1
 
 func _ready():
 	if change_collider:
@@ -37,12 +39,10 @@ func set_collider(col):
 		if $col_2: $col_2.disabled = true
 		if $col_3: $col_3.disabled = true
 		col.disabled = false
+		current_collider = col
 
 func disable_collider(state):
-	if $col_0: $col_0.disabled = state
-	if $col_1: $col_1.disabled = state
-	if $col_2: $col_2.disabled = state
-	if $col_3: $col_3.disabled = state
+	collider_disabled = state
 
 func _process(delta):
 	if sprite_direction != old_sprite_direction:
@@ -65,11 +65,15 @@ func _process(delta):
 		
 		elif sprite_direction == 1:
 			$sprite.frame = 1
-			if $col_0: set_collider($col_1)
+			if $col_1: set_collider($col_1)
 		
 		elif sprite_direction == 2:
 			$sprite.frame = 0
-			if $col_0: set_collider($col_2)
+			if $col_2: set_collider($col_2)
+	
+	if current_collider:
+		current_collider.disabled = collider_disabled
+		
 		
 
 func _physics_process(delta):
@@ -95,5 +99,4 @@ func _physics_process(delta):
 					brother_full.move_and_slide(velocity)
 					brother_full.stun = 2
 					
-			
 		self.move_and_slide(velocity)
