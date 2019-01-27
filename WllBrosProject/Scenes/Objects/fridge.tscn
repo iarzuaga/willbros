@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 15.8739, 8.87921 )
 
-[node name="fridge" type="KinematicBody2D" groups=[
+[node name="fridge" type="KinematicBody2D" index="0" groups=[
 "object",
 ]]
 
@@ -20,6 +20,9 @@ script = ExtResource( 1 )
 value = 20
 object_name = ""
 object_weight = 0
+change_collider = false
+invert_h = false
+sprite_direction = 0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
