@@ -9,7 +9,7 @@ Eric Silva As Artist <br/>
 Jorge Tuset As Artist <br/>
 Federico Franco As Lead Designer / Minor Artist <br/>
 <br/>
-And with the collaboration of: <br/>
+With the collaboration of: <br/>
 <br/>
 Federico Ríos As composer <br/>
  <br/>
