@@ -30,9 +30,11 @@ func _physics_process(delta):
 			var brother_full = object_person_collision.get_collider_shape().get_parent()
 			if  brother_full.is_in_group("brother"):
 				if brother_full.object_grabbed:
+					brother_full.move_and_slide(velocity)
 					self.direction = deceleration.normalized()
 					brother_full.interact(brother_full.object_grabbed, self)
 				else:
+					brother_full.move_and_slide(velocity)
 					brother_full.stun = 2
 					
 			

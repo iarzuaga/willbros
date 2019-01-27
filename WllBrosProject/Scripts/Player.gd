@@ -19,6 +19,7 @@ onready var attack_vel = Vector2(0, 0)
 
 
 var jump_stun = 0
+var throw_stun = 0
 
 func _ready():
 	pass
@@ -32,6 +33,10 @@ func _physics_process(delta):
 		jump_stun -= delta
 		if  jump_stun < 0:
 			jump_stun = 0
+	if throw_stun:
+		throw_stun -= delta
+		if  throw_stun < 0:
+			throw_stun = 0
 
 	vel_i = Vector2(0,0)
 	velocity = Vector2(0, 0)
@@ -113,14 +118,14 @@ func interact(object_grabbed, attacked):
 		object_grabbed[0].position = direction * drop_distance + interact_position
 		self.get_parent().add_child(object_grabbed[0])
 		
-		if vel_i:
+		if vel_i and not throw_stun:
 			object_grabbed[0].acceleration = direction * throw_force
-			pass
+			self.throw_stun = 4
 		
 		if attacked:
 			self.stun = 2
 			object_grabbed[0].acceleration = direction * throw_force
-			pass
+			
 		
 		object_grabbed.remove(0)
 		
@@ -137,6 +142,7 @@ func attack():
 		if attack_action:
 			var brother_full = attack_action.get_collider_shape().get_parent()
 			if  brother_full.is_in_group("brother") and brother_full.object_grabbed:
+				brother_full.move_and_slide(attack_vel)
 				brother_full.interact(brother_full.object_grabbed, self)
 
 		
