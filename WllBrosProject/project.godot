@@ -13,6 +13,10 @@ config_version=3
 config/name="WllBros"
 run/main_scene="res://Scenes/Menu.tscn"
 
+[autoload]
+
+global="*res://Scripts/global_vars.gd"
+
 [display]
 
 window/size/width=1920

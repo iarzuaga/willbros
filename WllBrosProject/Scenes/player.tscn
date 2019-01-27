@@ -21,25 +21,30 @@ extents = Vector2( 10, 15.7097 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10.9339, 21.019 )
+extents = Vector2( 13.9976, 21.019 )
 
-
-[node name="player" type="KinematicBody2D" index="0" groups=[
+[node name="player" type="KinematicBody2D" groups=[
 "brother",
 ]]
 
+z_index = 1
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
-velocity = Vector2( 0, 0 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 speed = 1800
 grab_distance = 35
-drop_distance = 60
+drop_distance = Vector2( 60, 50 )
+lift_offset = Vector2( 0, -94 )
 throw_force = 500
 play_two = false
+stun = 0
+attack_coldown = 2
+throw_coldown = 3
+jump_coldown = 2
+stun_duration = 2
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
@@ -84,14 +89,15 @@ audio_bus_name = "Master"
 
 [node name="collision" type="CollisionShape2D" parent="pick_area" index="0"]
 
-position = Vector2( -16.4536, 0 )
+position = Vector2( 5.00438, 0 )
 scale = Vector2( 1.1211, 0.753882 )
 shape = SubResource( 2 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="collision_render" type="Sprite" parent="pick_area" index="1"]
-position = Vector2( 8.79261, 0 )
-scale = Vector2( 0.753122, 1 )
+
+position = Vector2( 4.84032, 0 )
+scale = Vector2( 1.00338, 1 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
