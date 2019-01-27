@@ -16,7 +16,7 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 7 )
 
-[node name="winer_stage" type="Node"]
+[node name="winer_stage" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
