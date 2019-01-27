@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/game_manager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
@@ -15,12 +15,19 @@
 [ext_resource path="res://Sprites/Cuarto.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Placeholder/wall_l.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/shadow.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Sprites/Placeholder/OtroCamion.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/OtroOtroCamion.png" type="Texture" id=17]
-[ext_resource path="res://Scripts/Truck.gd" type="Script" id=18]
-[ext_resource path="res://Fonts/DS-DIGI.TTF" type="DynamicFontData" id=19]
-[ext_resource path="res://Scripts/score.gd" type="Script" id=20]
-[ext_resource path="res://Scenes/street sprite.png" type="Texture" id=21]
+[ext_resource path="res://Fonts/DS-DIGI.TTF" type="DynamicFontData" id=16]
+[ext_resource path="res://Scripts/timer.gd" type="Script" id=17]
+[ext_resource path="res://Sprites/Placeholder/OtroCamion.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/OtroOtroCamion.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/Truck.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/coin.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scripts/score.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/street sprite.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/Objects/vase.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Objects/plant.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Objects/tv_red.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Objects/couch.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Objects/couch_big.tscn" type="PackedScene" id=28]
 
 [sub_resource type="TileSet" id=1]
 
@@ -77,6 +84,14 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 20.5574, 10 )
 
+[sub_resource type="DynamicFont" id=10]
+
+size = 50
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 16 )
+_sections_unfolded = [ "Font", "Settings" ]
+
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
@@ -87,21 +102,13 @@ extents = Vector2( 71.1315, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 63.0498, 62.4424 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=9]
 
-size = 0
-use_mipmaps = false
+size = 30
+use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 19 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
-
-[sub_resource type="DynamicFont" id=7]
-
-size = 0
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 19 )
-_sections_unfolded = [ "Font" ]
+font_data = ExtResource( 16 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="game_manager" type="Node2D" index="0"]
 
@@ -111,10 +118,14 @@ script = ExtResource( 1 )
 [node name="player" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( -255.041, 69.1354 )
+speed = 2700
+drop_distance = Vector2( 60, -50 )
 
 [node name="player2" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -259.016, 649.812 )
+speed = 2700
+drop_distance = Vector2( 60, -50 )
 play_two = true
 
 [node name="pause" type="Sprite" parent="." index="2"]
@@ -699,52 +710,92 @@ scale = Vector2( 2, 2 )
 shape = SubResource( 4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Trucks" type="Node2D" parent="." index="10"]
+[node name="trucks" type="Node2D" parent="." index="10"]
 
-editor/display_folded = true
+[node name="timer" type="RichTextLabel" parent="trucks" index="0"]
 
-[node name="OtroCamion" type="Sprite" parent="Trucks" index="0"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -400.0
+margin_top = -238.0
+margin_right = -154.0
+margin_bottom = -126.0
+rect_rotation = 0.0189461
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 10 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "2:59"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+script = ExtResource( 17 )
+_sections_unfolded = [ "Material", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="second" type="Timer" parent="trucks/timer" index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[node name="OtroCamion" type="Sprite" parent="trucks" index="1"]
 
 position = Vector2( -383.837, 615.573 )
 scale = Vector2( 1.44214, 1.44214 )
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="OtroCamion2" type="Sprite" parent="Trucks" index="1"]
+[node name="OtroCamion2" type="Sprite" parent="trucks" index="2"]
 
 position = Vector2( -383.837, 40.0313 )
 scale = Vector2( 1.44214, 1.44214 )
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="truck" type="KinematicBody2D" parent="Trucks" index="2"]
+[node name="truck" type="KinematicBody2D" parent="trucks" index="3"]
 
+editor/display_folded = true
 position = Vector2( -409.696, 35.8382 )
+z_index = 20
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 18 )
+script = ExtResource( 20 )
+_sections_unfolded = [ "Z Index" ]
 
-[node name="truck_borde_0" type="CollisionShape2D" parent="Trucks/truck" index="0"]
+[node name="truck_borde_0" type="CollisionShape2D" parent="trucks/truck" index="0"]
 
 position = Vector2( 4.46521, 63.5313 )
 shape = SubResource( 5 )
 
-[node name="truck_borde_1" type="CollisionShape2D" parent="Trucks/truck" index="1"]
+[node name="truck_borde_1" type="CollisionShape2D" parent="trucks/truck" index="1"]
 
 position = Vector2( 4.46521, -78.4287 )
 shape = SubResource( 5 )
 
-[node name="truck_borde_2" type="CollisionShape2D" parent="Trucks/truck" index="2"]
+[node name="truck_borde_2" type="CollisionShape2D" parent="trucks/truck" index="2"]
 
 position = Vector2( -56.1188, -8.16568 )
 rotation = 1.56835
 shape = SubResource( 5 )
 
-[node name="drop_area" type="Area2D" parent="Trucks/truck" index="3"]
+[node name="drop_area" type="Area2D" parent="trucks/truck" index="3"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -753,66 +804,84 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="input" type="CollisionShape2D" parent="Trucks/truck/drop_area" index="0"]
+[node name="input" type="CollisionShape2D" parent="trucks/truck/drop_area" index="0"]
 
 position = Vector2( 9.67908, -7.52818 )
 shape = SubResource( 6 )
 
-[node name="points" type="RichTextLabel" parent="Trucks/truck" index="4"]
+[node name="coin" parent="trucks/truck/drop_area" index="1" instance=ExtResource( 21 )]
 
+position = Vector2( -15.2621, 455.614 )
+z_index = 100
+_sections_unfolded = [ "Z Index" ]
+
+[node name="coin2" parent="trucks/truck/drop_area" index="2" instance=ExtResource( 21 )]
+
+position = Vector2( -6.58504, -125.346 )
+z_index = 100
+_sections_unfolded = [ "Z Index" ]
+
+[node name="points" type="RichTextLabel" parent="trucks/truck" index="4"]
+
+modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 12.0
+margin_top = -140.0
+margin_right = 222.0
+margin_bottom = -100.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 8 )
+custom_fonts/normal_font = SubResource( 9 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = ""
+text = "0"
 scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-script = ExtResource( 20 )
-_sections_unfolded = [ "custom_colors", "custom_constants", "custom_fonts" ]
+script = ExtResource( 22 )
+_sections_unfolded = [ "Material", "Visibility", "custom_fonts" ]
 
-[node name="truck2" type="KinematicBody2D" parent="Trucks" index="3"]
+[node name="truck2" type="KinematicBody2D" parent="trucks" index="4"]
 
+editor/display_folded = true
 position = Vector2( -409.696, 610.812 )
+z_index = 20
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 18 )
+script = ExtResource( 20 )
+_sections_unfolded = [ "Z Index" ]
 
-[node name="truck_borde_0" type="CollisionShape2D" parent="Trucks/truck2" index="0"]
+[node name="truck_borde_0" type="CollisionShape2D" parent="trucks/truck2" index="0"]
 
 position = Vector2( 4.46521, 63.5313 )
 shape = SubResource( 5 )
 
-[node name="truck_borde_1" type="CollisionShape2D" parent="Trucks/truck2" index="1"]
+[node name="truck_borde_1" type="CollisionShape2D" parent="trucks/truck2" index="1"]
 
 position = Vector2( 4.46521, -78.4287 )
 shape = SubResource( 5 )
 
-[node name="truck_borde_2" type="CollisionShape2D" parent="Trucks/truck2" index="2"]
+[node name="truck_borde_2" type="CollisionShape2D" parent="trucks/truck2" index="2"]
 
 position = Vector2( -56.1188, -8.16568 )
 rotation = 1.56835
 shape = SubResource( 5 )
 
-[node name="drop_area" type="Area2D" parent="Trucks/truck2" index="3"]
+[node name="drop_area" type="Area2D" parent="trucks/truck2" index="3"]
 
 editor/display_folded = true
 input_pickable = true
@@ -823,48 +892,87 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="input" type="CollisionShape2D" parent="Trucks/truck2/drop_area" index="0"]
+[node name="input" type="CollisionShape2D" parent="trucks/truck2/drop_area" index="0"]
 
 position = Vector2( 9.67908, -7.52818 )
 shape = SubResource( 6 )
 
-[node name="points" type="RichTextLabel" parent="Trucks/truck2" index="4"]
+[node name="points" type="RichTextLabel" parent="trucks/truck2" index="4"]
 
+modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 102.0
-margin_top = -729.0
-margin_right = 142.0
-margin_bottom = -689.0
+margin_left = 7.0
+margin_top = -135.0
+margin_right = 217.0
+margin_bottom = -95.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 9 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = ""
+text = "0"
 scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-script = ExtResource( 20 )
-_sections_unfolded = [ "custom_fonts" ]
+script = ExtResource( 22 )
+_sections_unfolded = [ "Material", "Visibility", "custom_fonts" ]
 
 [node name="street sprite" type="Sprite" parent="." index="11"]
 
 position = Vector2( -431.09, 314.895 )
 scale = Vector2( 2.47269, 2.47269 )
 z_index = -99
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 _sections_unfolded = [ "Z Index" ]
+
+[node name="living" type="Node2D" parent="." index="12"]
+
+editor/display_folded = true
+
+[node name="Common base" parent="living" index="0" instance=ExtResource( 24 )]
+
+position = Vector2( 1240.57, 105.879 )
+
+[node name="Plant" parent="living" index="1" instance=ExtResource( 25 )]
+
+position = Vector2( 268.577, 393.776 )
+
+[node name="Plant2" parent="living" index="2" instance=ExtResource( 25 )]
+
+position = Vector2( 270.382, 106.781 )
+
+[node name="Shiny Tv" parent="living" index="3" instance=ExtResource( 26 )]
+
+position = Vector2( 999.872, 297.374 )
+invert_h = true
+sprite_direction = 1
+
+[node name="Couch" parent="living" index="4" instance=ExtResource( 27 )]
+
+position = Vector2( 1138.59, 209.666 )
+sprite_direction = 2
+
+[node name="Couch2" parent="living" index="5" instance=ExtResource( 27 )]
+
+position = Vector2( 1138.59, 336.016 )
+
+[node name="Big Couch" parent="living" index="6" instance=ExtResource( 28 )]
+
+position = Vector2( 1239.67, 274.646 )
+sprite_direction = 3
+
+[connection signal="timeout" from="trucks/timer/second" to="trucks/timer" method="_on_second_timeout"]
 
 

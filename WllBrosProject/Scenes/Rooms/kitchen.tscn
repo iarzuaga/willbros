@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/room.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Cuarto.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Objects/plant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/shower.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/wc.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/bidet.tscn" type="PackedScene" id=6]
+
+[node name="room_base" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Cuarto" type="Sprite" parent="." index="0"]
+
+z_index = -10
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Plant" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 237.578, 73.1218 )
+
+[node name="Shower" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 208.399, -114.922 )
+
+[node name="WC" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( -137.969, -93.848 )
+sprite_direction = 2
+
+[node name="Bidet" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( -194.167, -116.543 )
+sprite_direction = 2
+
+

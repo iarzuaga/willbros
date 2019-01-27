@@ -11,7 +11,7 @@
 script/source = "extends Node2D
 "
 
-[node name="room_base" type="Node2D"]
+[node name="room_base" type="Node2D" index="0"]
 
 script = SubResource( 1 )
 
@@ -22,7 +22,7 @@ sprite_direction = 2
 
 [node name="tv" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( -211.427, 58.405 )
+position = Vector2( -211.427, 59.0037 )
 invert_h = true
 
 [node name="object" parent="." index="2" instance=ExtResource( 3 )]
@@ -34,7 +34,7 @@ sprite_direction = 3
 
 [node name="tv2" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( -103.34, -121.668 )
+position = Vector2( -102.741, -122.267 )
 sprite_direction = 2
 
 [node name="Cuarto" type="Sprite" parent="." index="4"]

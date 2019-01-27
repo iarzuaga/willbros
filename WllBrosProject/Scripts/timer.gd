@@ -20,3 +20,7 @@ func _process(delta):
 
 func _on_second_timeout():
 	second -= 1
+
+
+func _on_Timer_timeout():
+	pass # replace with function body

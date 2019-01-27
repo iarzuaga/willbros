@@ -3,9 +3,9 @@ extends Node
 var room_list = []
 
 onready var room_types = [
-	preload("res://Scenes/Rooms/red.tscn"),
-	preload("res://Scenes/Rooms/blue.tscn"),
-	preload("res://Scenes/Rooms/base.tscn"),
+	preload("res://Scenes/Rooms/bedroom_2.tscn"),
+	preload("res://Scenes/Rooms/kitchen.tscn"),
+	preload("res://Scenes/Rooms/bathroom.tscn"),
 	preload("res://Scenes/Rooms/bedroom.tscn")
 ]
 

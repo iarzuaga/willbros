@@ -178,6 +178,7 @@ func interact(object_grabbed, attacked):
 			
 			self.stun = stun_duration
 			object_grabbed[0].position = direction * drop_distance.x + interact_position
+			object_grabbed[0].position.y += drop_distance.y
 			object_grabbed[0].acceleration = direction * throw_force
 			object_grabbed.remove(0)
 		
@@ -189,6 +190,7 @@ func interact(object_grabbed, attacked):
 			object_grabbed[0].disable_collider(false)
 			
 			object_grabbed[0].position = direction * drop_distance.x + interact_position
+			object_grabbed[0].position.y += drop_distance.y
 			object_grabbed[0].acceleration = direction * throw_force
 			object_grabbed.remove(0)
 			
