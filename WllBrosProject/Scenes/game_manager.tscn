@@ -84,7 +84,7 @@ extents = Vector2( 10, 10 )
 custom_solver_bias = 0.0
 extents = Vector2( 20.5574, 10 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=5]
 
 size = 50
 use_mipmaps = true
@@ -92,17 +92,17 @@ use_filter = false
 font_data = ExtResource( 16 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 71.1315, 10 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 63.0498, 62.4424 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 
 size = 30
 use_mipmaps = true
@@ -133,9 +133,10 @@ play_two = true
 pause_mode = 2
 visible = false
 position = Vector2( 510, 298 )
+z_index = 4096
 texture = ExtResource( 4 )
 script = ExtResource( 5 )
-_sections_unfolded = [ "Material", "Pause", "Visibility" ]
+_sections_unfolded = [ "Material", "Pause", "Visibility", "Z Index" ]
 
 [node name="background" type="TileMap" parent="." index="3"]
 
@@ -729,7 +730,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 10 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 bbcode_enabled = false
 bbcode_text = ""
@@ -781,18 +782,18 @@ _sections_unfolded = [ "Z Index" ]
 [node name="truck_borde_0" type="CollisionShape2D" parent="trucks/truck" index="0"]
 
 position = Vector2( 4.46521, 63.5313 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="truck_borde_1" type="CollisionShape2D" parent="trucks/truck" index="1"]
 
 position = Vector2( 4.46521, -78.4287 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="truck_borde_2" type="CollisionShape2D" parent="trucks/truck" index="2"]
 
 position = Vector2( -56.1188, -8.16568 )
 rotation = 1.56835
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="drop_area" type="Area2D" parent="trucks/truck" index="3"]
 
@@ -807,7 +808,7 @@ audio_bus_name = "Master"
 [node name="input" type="CollisionShape2D" parent="trucks/truck/drop_area" index="0"]
 
 position = Vector2( 9.67908, -7.52818 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="coin" parent="trucks/truck/drop_area" index="1" instance=ExtResource( 21 )]
 
@@ -838,7 +839,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -868,18 +869,18 @@ _sections_unfolded = [ "Z Index" ]
 [node name="truck_borde_0" type="CollisionShape2D" parent="trucks/truck2" index="0"]
 
 position = Vector2( 4.46521, 63.5313 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="truck_borde_1" type="CollisionShape2D" parent="trucks/truck2" index="1"]
 
 position = Vector2( 4.46521, -78.4287 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="truck_borde_2" type="CollisionShape2D" parent="trucks/truck2" index="2"]
 
 position = Vector2( -56.1188, -8.16568 )
 rotation = 1.56835
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="drop_area" type="Area2D" parent="trucks/truck2" index="3"]
 
@@ -895,7 +896,7 @@ audio_bus_name = "Master"
 [node name="input" type="CollisionShape2D" parent="trucks/truck2/drop_area" index="0"]
 
 position = Vector2( 9.67908, -7.52818 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="points" type="RichTextLabel" parent="trucks/truck2" index="4"]
 
@@ -914,7 +915,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = false
 bbcode_text = ""
 visible_characters = -1
@@ -931,7 +932,7 @@ _sections_unfolded = [ "Material", "Visibility", "custom_fonts" ]
 
 [node name="street sprite" type="Sprite" parent="." index="11"]
 
-position = Vector2( -431.09, 314.895 )
+position = Vector2( -429.239, 314.895 )
 scale = Vector2( 2.47269, 2.47269 )
 z_index = -99
 texture = ExtResource( 23 )

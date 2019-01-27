@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blutarch sprites.png-3e4267317015c253588370f608f121e1.stex"
+path="res://.import/blutarch_sprites.png-faa745aba1ebca46620d5561b8f30d7b.stex"
 
 [deps]
 
-source_file="res://Sprites/blutarch sprites.png"
-dest_files=[ "res://.import/blutarch sprites.png-3e4267317015c253588370f608f121e1.stex" ]
+source_file="res://Sprites/blutarch_sprites.png"
+dest_files=[ "res://.import/blutarch_sprites.png-faa745aba1ebca46620d5561b8f30d7b.stex" ]
 
 [params]
 

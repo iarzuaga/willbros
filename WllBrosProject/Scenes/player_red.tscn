@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Scripts/player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/redmon.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Placeholder/caja placeholders.png" type="Texture" id=3]
 [ext_resource path="res://animation/idle_down.tres" type="Animation" id=4]
@@ -99,7 +99,7 @@ tracks/0/keys = {
 "values": [ 18, 17, 19, 17 ]
 }
 
-[node name="player" type="KinematicBody2D" groups=[
+[node name="player" type="KinematicBody2D" index="0" groups=[
 "brother",
 ]]
 

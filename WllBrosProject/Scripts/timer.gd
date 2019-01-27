@@ -1,7 +1,7 @@
 extends RichTextLabel
 
-var second = 15
-var minute = 0
+var second = 59
+var minute = 2
 
 func _process(delta):
 	if second < 0:
@@ -20,7 +20,3 @@ func _process(delta):
 
 func _on_second_timeout():
 	second -= 1
-
-
-func _on_Timer_timeout():
-	pass # replace with function body

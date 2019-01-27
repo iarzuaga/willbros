@@ -33,7 +33,7 @@ func _process(delta):
 			is_showing = false
 		else:
 			is_showing = true
-			$Creditos.visible=true
+			$Creditos.visible = true
 		
 
 #@param score int (puntos dentro de truck al final del tiempo)

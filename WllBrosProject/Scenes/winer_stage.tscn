@@ -1,14 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/winer_stage.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/winer.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/clip.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Placeholder/caja placeholders.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/blutarch.png" type="Texture" id=5]
-https://github.com/iarzuaga/willbros/pull/22/conflicts[ext_resource path="res://Sprites/redmond.png" type="Texture" id=6]
-[ext_resource path="res://Fonts/HolidayFree.otf" type="DynamicFontData" id=7]
-[ext_resource path="res://Scenes/RichTextLabel.gd" type="Script" id=8]
-[ext_resource path="res://Sprites/creditos.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/blue wins.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/red wins.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/HolidayFree.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/RichTextLabel.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/creditos.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -79,9 +76,8 @@ _sections_unfolded = [ "BBCode", "Visibility", "custom_fonts" ]
 [node name="Creditos" type="Sprite" parent="." index="2"]
 
 visible = false
-position = Vector2( 959, 539 )
-z_index = 5
-texture = ExtResource( 9 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
+position = Vector2( 965.789, 537.691 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Visibility" ]
 
 

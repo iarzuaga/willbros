@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://Scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/blutarch sprites.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/blutarch_sprites.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Placeholder/caja placeholders.png" type="Texture" id=3]
 [ext_resource path="res://animation/idle_down.tres" type="Animation" id=4]
 [ext_resource path="res://animation/idle_side.tres" type="Animation" id=5]
@@ -99,7 +99,7 @@ tracks/0/keys = {
 "values": [ 18, 17, 19, 17 ]
 }
 
-[node name="player" type="KinematicBody2D" groups=[
+[node name="player" type="KinematicBody2D" index="0" groups=[
 "brother",
 ]]
 
@@ -111,7 +111,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 speed = 1800
-grab_distance = 35
+grab_distance = 50
 drop_distance = Vector2( 60, 50 )
 lift_offset = Vector2( 0, -94 )
 throw_force = 500
