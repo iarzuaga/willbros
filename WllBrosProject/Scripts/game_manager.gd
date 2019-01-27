@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 onready var room_container = get_node("room_container")
 
