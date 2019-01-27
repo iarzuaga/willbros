@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.8739, 8.87921 )
+extents = Vector2( 15.9663, 8.87921 )
 
 [node name="object" type="KinematicBody2D" index="0" groups=[
 "object",
@@ -20,6 +20,9 @@ script = ExtResource( 1 )
 value = 10
 object_name = ""
 object_weight = 0
+change_collider = false
+invert_h = false
+sprite_direction = 0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
@@ -31,8 +34,8 @@ _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="collision" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 12.7495, 19.3135 )
-scale = Vector2( 1.56393, 3.74842 )
+position = Vector2( 12.3572, 19.3135 )
+scale = Vector2( 1.58472, 3.74842 )
 shape = SubResource( 1 )
 
 

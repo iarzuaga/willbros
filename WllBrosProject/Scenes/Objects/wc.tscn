@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/object.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Tele.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Jarra.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -31,28 +31,27 @@ sprite_direction = 0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0, 2.28349 )
+position = Vector2( 0, 3.28349 )
 scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
-hframes = 3
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="col_0" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 0.114009, 26.3684 )
-scale = Vector2( 3.19369, 2.96302 )
+position = Vector2( 0.11401, 27.3262 )
+scale = Vector2( 3.19369, 3.02903 )
 shape = SubResource( 1 )
 
 [node name="col_1" type="CollisionShape2D" parent="." index="2"]
 
-position = Vector2( -0.129424, 12.0599 )
-scale = Vector2( 3.04061, 4.08456 )
+position = Vector2( -0.129424, 12.5237 )
+scale = Vector2( 3.04061, 4.12024 )
 shape = SubResource( 2 )
 
 [node name="col_2" type="CollisionShape2D" parent="." index="3"]
 
-position = Vector2( 0.114009, 26.3684 )
-scale = Vector2( 3.19369, 2.96302 )
+position = Vector2( 0.639605, 26.9295 )
+scale = Vector2( 2.20333, 3.0181 )
 shape = SubResource( 1 )
 
 
