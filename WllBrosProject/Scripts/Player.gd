@@ -125,7 +125,6 @@ func interact(object_grabbed, attacked):
 			object_grabbed.remove(0)
 			self.throw_stun = 3
 		
-		
 	else:
 		if grab_zone.get_overlapping_bodies():
 			var bodies = grab_zone.get_overlapping_bodies()

@@ -9,7 +9,7 @@
 [ext_resource path="res://Sprites/Placeholder/wall_l.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/shadow.tscn" type="PackedScene" id=8]
 
-[node name="room_base" type="Node2D"]
+[node name="room_base" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -61,9 +61,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="shadow" parent="." index="4" instance=ExtResource( 8 )]
 
-visible = false
 position = Vector2( 0, -32.0596 )
 scale = Vector2( 1, 1.27314 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Visibility" ]
 
 
