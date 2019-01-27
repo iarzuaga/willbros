@@ -227,6 +227,7 @@ score_p1 = 0
 
 [node name="points2" type="RichTextLabel" parent="." index="5"]
 
+editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
