@@ -1,19 +1,22 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/winer_stage.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/winer.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/clip.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Placeholder/caja placeholders.png" type="Texture" id=4]
-[ext_resource path="res://Fonts/HolidayFree.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/blutarch.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/redmond.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/HolidayFree.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scenes/RichTextLabel.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 25
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 7 )
 
-[node name="winer_stage" type="Node" index="0"]
+[node name="winer_stage" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -44,22 +47,32 @@ _sections_unfolded = [ "Material", "Visibility", "Z Index" ]
 
 [node name="winer" type="Sprite" parent="book" index="2"]
 
-position = Vector2( 193.055, -235.065 )
-scale = Vector2( 148.127, 148.127 )
-_sections_unfolded = [ "Z Index" ]
+visible = false
+position = Vector2( 266.555, -161.651 )
+scale = Vector2( 0.509648, 0.450882 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="winer2" type="Sprite" parent="book" index="3"]
+
+visible = false
+position = Vector2( 266.696, -162.107 )
+scale = Vector2( 0.468502, 0.475358 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." index="1"]
 
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 743.0
-margin_top = 228.0
-margin_right = 1123.0
-margin_bottom = 824.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -190.0
+margin_top = -298.0
+margin_right = 190.0
+margin_bottom = 298.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
 mouse_filter = 0
@@ -73,11 +86,12 @@ visible_characters = -1
 percent_visible = 1.0
 meta_underlined = true
 tab_size = 4
-text = "Ahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+text = ""
 scroll_active = true
 scroll_following = false
 selection_enabled = false
 override_selected_font_color = false
-_sections_unfolded = [ "Visibility" ]
+script = ExtResource( 8 )
+_sections_unfolded = [ "BBCode", "Visibility" ]
 
 

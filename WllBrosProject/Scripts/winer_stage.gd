@@ -36,5 +36,3 @@ func set_data(score, score1, objects):
 	if score < score1 :
 		$RichTextLabel.set_text("Player 2 Win \n Score:"+str(score1)+"\n List objects:"+str(objects))
 		pass
-
-	
