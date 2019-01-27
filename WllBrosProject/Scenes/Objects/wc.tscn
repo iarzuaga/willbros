@@ -13,7 +13,7 @@ extents = Vector2( 9.41706, 8.87921 )
 custom_solver_bias = 0.0
 extents = Vector2( 8.56158, 10 )
 
-[node name="tv" type="KinematicBody2D" index="0" groups=[
+[node name="WC" type="KinematicBody2D" index="0" groups=[
 "object",
 ]]
 
@@ -22,7 +22,7 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-value = 20
+value = 15
 object_name = ""
 object_weight = 0
 change_collider = true
