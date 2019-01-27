@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.8739, 8.87921 )
+extents = Vector2( 16.3535, 8.87921 )
 
-[node name="furnace" type="KinematicBody2D" index="0" groups=[
+[node name="Furnace" type="KinematicBody2D" index="0" groups=[
 "object",
 ]]
 
@@ -26,16 +26,34 @@ sprite_direction = 0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0, -7.40208 )
+position = Vector2( 0.260193, -0.417539 )
 scale = Vector2( 1.03279, 1.03279 )
 texture = ExtResource( 2 )
 hframes = 3
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="collision" type="CollisionShape2D" parent="." index="1"]
+[node name="col_0" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.0979631, 8.65443 )
+position = Vector2( 0.463223, 16.9808 )
 scale = Vector2( 1.56393, 1.91604 )
+shape = SubResource( 1 )
+
+[node name="col_1" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 1.89019, 16.1828 )
+scale = Vector2( 1.63766, 1.84887 )
+shape = SubResource( 1 )
+
+[node name="col_2" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( 0.463223, 16.9808 )
+scale = Vector2( 1.56393, 1.91604 )
+shape = SubResource( 1 )
+
+[node name="col_3" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( 1.89019, 16.1828 )
+scale = Vector2( 1.63766, 1.84887 )
 shape = SubResource( 1 )
 
 

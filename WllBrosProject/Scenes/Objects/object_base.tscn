@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 15.8739, 8.87921 )
 
-[node name="object" type="KinematicBody2D" index="0" groups=[
+[node name="Box" type="KinematicBody2D" index="0" groups=[
 "object",
 ]]
 
@@ -31,7 +31,7 @@ scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="collision" type="CollisionShape2D" parent="." index="1"]
+[node name="col_0" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -0.0979631, 12.4212 )
 scale = Vector2( 1.56393, 1.51334 )

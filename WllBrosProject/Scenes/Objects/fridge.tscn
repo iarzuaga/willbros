@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 15.8739, 8.87921 )
+extents = Vector2( 15.8739, 9.09989 )
 
-[node name="fridge" type="KinematicBody2D" index="0" groups=[
+[node name="Fridge" type="KinematicBody2D" index="0" groups=[
 "object",
 ]]
 
@@ -20,22 +20,41 @@ script = ExtResource( 1 )
 value = 20
 object_name = ""
 object_weight = 0
-change_collider = false
+change_collider = true
 invert_h = false
 sprite_direction = 0
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 0, -24.6396 )
+position = Vector2( -0.778563, -4.48583 )
 scale = Vector2( 1.57727, 1.57727 )
 texture = ExtResource( 2 )
 hframes = 3
+frame = 2
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="collision" type="CollisionShape2D" parent="." index="1"]
+[node name="col_0" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -0.0979631, 9.61189 )
-scale = Vector2( 1.56393, 1.81754 )
+position = Vector2( -0.492298, 23.1572 )
+scale = Vector2( 1.62393, 2.54708 )
+shape = SubResource( 1 )
+
+[node name="col_1" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( -0.492298, 23.1572 )
+scale = Vector2( 1.62393, 2.54708 )
+shape = SubResource( 1 )
+
+[node name="col_2" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -0.492298, 23.1572 )
+scale = Vector2( 1.62393, 2.54708 )
+shape = SubResource( 1 )
+
+[node name="col_3" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( -0.492298, 23.1572 )
+scale = Vector2( 1.62393, 2.54708 )
 shape = SubResource( 1 )
 
 

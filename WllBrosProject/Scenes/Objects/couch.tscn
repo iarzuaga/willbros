@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 15.8739, 8.87921 )
 
-[node name="object" type="KinematicBody2D" index="0" groups=[
+[node name="Couch" type="KinematicBody2D" index="0" groups=[
 "object",
 ]]
 
@@ -17,10 +17,10 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-value = 10
+value = 5
 object_name = ""
 object_weight = 0
-change_collider = false
+change_collider = true
 invert_h = false
 sprite_direction = 0
 
@@ -32,10 +32,28 @@ texture = ExtResource( 2 )
 hframes = 3
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="collision" type="CollisionShape2D" parent="." index="1"]
+[node name="col_0" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( -0.159115, 26.3767 )
 scale = Vector2( 3.18769, 3.04757 )
+shape = SubResource( 1 )
+
+[node name="col_1" type="CollisionShape2D" parent="." index="2"]
+
+position = Vector2( 0.882985, 26.3767 )
+scale = Vector2( 2.35052, 3.04757 )
+shape = SubResource( 1 )
+
+[node name="col_2" type="CollisionShape2D" parent="." index="3"]
+
+position = Vector2( -0.159115, 26.3767 )
+scale = Vector2( 3.18769, 3.04757 )
+shape = SubResource( 1 )
+
+[node name="col_3" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( 0.796154, 26.5503 )
+scale = Vector2( 2.35512, 3.04757 )
 shape = SubResource( 1 )
 
 

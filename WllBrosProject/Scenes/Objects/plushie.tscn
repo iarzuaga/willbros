@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/object.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Peluche.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 15.3558, 9.09989 )
+
+[node name="Big Old Bingus" type="KinematicBody2D" index="0" groups=[
+"object",
+]]
+
+position = Vector2( 0, -0.17363 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+value = 25
+object_name = ""
+object_weight = 0
+change_collider = true
+invert_h = false
+sprite_direction = 0
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -0.778563, -0.485832 )
+scale = Vector2( 1.57727, 1.57727 )
+texture = ExtResource( 2 )
+hframes = 3
+frame = 1
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="col_0" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+position = Vector2( -0.839558, 12.8101 )
+scale = Vector2( 1.62393, 1.39006 )
+shape = SubResource( 1 )
+
+[node name="col_1" type="CollisionShape2D" parent="." index="2"]
+
+visible = false
+position = Vector2( 0.830233, 12.2892 )
+scale = Vector2( 1.26956, 1.31831 )
+shape = SubResource( 1 )
+
+[node name="col_2" type="CollisionShape2D" parent="." index="3"]
+
+visible = false
+position = Vector2( 0.0286064, 13.2377 )
+scale = Vector2( 1.62393, 1.44028 )
+shape = SubResource( 1 )
+
+[node name="col_3" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( 1.87706, 11.9355 )
+scale = Vector2( 1.49485, 1.36136 )
+shape = SubResource( 1 )
+
+

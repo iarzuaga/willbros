@@ -5,7 +5,7 @@ var room_list = []
 onready var room_types = [
 	preload("res://Scenes/Rooms/red.tscn"),
 	preload("res://Scenes/Rooms/blue.tscn"),
-	preload("res://Scenes/Rooms/green.tscn"),
+	preload("res://Scenes/Rooms/base.tscn"),
 	preload("res://Scenes/Rooms/bedroom.tscn")
 ]
 

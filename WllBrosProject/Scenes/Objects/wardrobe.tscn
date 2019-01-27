@@ -13,7 +13,7 @@ extents = Vector2( 15.8739, 8.87921 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="tv" type="KinematicBody2D" index="0" groups=[
+[node name="Wardrobe" type="KinematicBody2D" index="0" groups=[
 "object",
 ]]
 
@@ -54,5 +54,11 @@ shape = SubResource( 2 )
 position = Vector2( 0.114009, 26.3684 )
 scale = Vector2( 3.19369, 2.96302 )
 shape = SubResource( 1 )
+
+[node name="col_3" type="CollisionShape2D" parent="." index="4"]
+
+position = Vector2( -0.129424, 12.0599 )
+scale = Vector2( 3.04061, 4.08456 )
+shape = SubResource( 2 )
 
 
