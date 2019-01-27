@@ -8,7 +8,7 @@ func _process(delta):
 	var obj_list = self.get_overlapping_bodies()
 	
 	for obj in obj_list:
-		if obj.is_in_group("player"):
+		if obj.is_in_group("brother"):
 			in_area = true
 		
 	fade_update(delta)

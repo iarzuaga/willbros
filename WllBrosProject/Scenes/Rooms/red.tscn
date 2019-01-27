@@ -7,15 +7,15 @@
 script/source = "extends Node2D
 "
 
-[node name="room_base" type="Node2D"]
+[node name="room_base" type="Node2D" index="0"]
 
 script = SubResource( 1 )
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0, 3.25803 )
+scale = Vector2( 0.616279, 0.616279 )
 texture = ExtResource( 1 )
-hframes = 4
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
 

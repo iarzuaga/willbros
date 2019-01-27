@@ -14,9 +14,8 @@ script = SubResource( 1 )
 [node name="sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( 0, 3.25803 )
+scale = Vector2( 0.616279, 0.616279 )
 texture = ExtResource( 1 )
-hframes = 4
-frame = 3
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Transform" ]
 
 
