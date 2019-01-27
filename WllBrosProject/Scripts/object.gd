@@ -38,6 +38,12 @@ func set_collider(col):
 		if $col_3: $col_3.disabled = true
 		col.disabled = false
 
+func disable_collider(state):
+	if $col_0: $col_0.disabled = state
+	if $col_1: $col_1.disabled = state
+	if $col_2: $col_2.disabled = state
+	if $col_3: $col_3.disabled = state
+
 func _process(delta):
 	if sprite_direction != old_sprite_direction:
 		if invert_h:

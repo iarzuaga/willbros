@@ -116,7 +116,7 @@ func interact(object_grabbed, attacked):
 			
 			#self.get_parent().add_child(object_grabbed[0])
 			change_parent(object_grabbed[0], self, object_parent)
-			object_grabbed[0].get_node("collider").disabled = false
+			object_grabbed[0].disable_collider(false)
 			
 			self.stun = stun_duration
 			object_grabbed[0].position = direction * drop_distance.x + interact_position
@@ -128,7 +128,7 @@ func interact(object_grabbed, attacked):
 			
 			#self.get_parent().add_child(object_grabbed[0])
 			change_parent(object_grabbed[0], self, object_parent)
-			object_grabbed[0].get_node("col_1").disabled = false
+			object_grabbed[0].disable_collider(false)
 			
 			object_grabbed[0].position = direction * drop_distance.x + interact_position
 			object_grabbed[0].acceleration = direction * throw_force
@@ -145,7 +145,7 @@ func interact(object_grabbed, attacked):
 					object_grabbed.append(object)
 					object_grabbed[0].position = lift_offset
 					object_grabbed[0].velocity = Vector2(0, 0)
-					object_grabbed[0].get_node("col_1").disabled = true
+					object_grabbed[0].disable_collider(true)
 					change_parent(object_grabbed[0], object_grabbed[0].get_parent(), self)
 					break
 

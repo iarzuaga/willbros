@@ -1,4 +1,7 @@
 extends Node
 
-onready var player_blue = player_data()
-onready var player_red = player_data()
+onready var player_blue_points = 0
+onready var player_blue_item = 0
+
+onready var player_red_points = 0
+onready var player_red_item = 0
