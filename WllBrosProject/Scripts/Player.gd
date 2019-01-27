@@ -128,9 +128,13 @@ func interact(object_grabbed, attacked):
 		
 	else:
 		if grab_zone.get_overlapping_bodies():
-			var object = grab_zone.get_overlapping_bodies()[0]
-			object_grabbed.append(object)
-			object.get_parent().remove_child(object)
+			var bodies = grab_zone.get_overlapping_bodies()
+			
+			for object in bodies:
+				if object.is_in_group("object"):
+					object_grabbed.append(object)
+					object.get_parent().remove_child(object)
+					break
 			
 func attack():
 	if not self.object_grabbed:

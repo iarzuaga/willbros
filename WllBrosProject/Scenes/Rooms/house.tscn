@@ -33,7 +33,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="home_1" type="Node"]
+[node name="home_1" type="Node" index="0"]
 
 [node name="camera" type="Camera2D" parent="." index="0"]
 

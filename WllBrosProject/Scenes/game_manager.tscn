@@ -1,62 +1,79 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/game_manager.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Rooms/house.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objects/object_base.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/room_randomizer.gd" type="Script" id=5]
-[ext_resource path="res://Sprites/Placeholder/box.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Rooms/house.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/room_randomizer.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Placeholder/box.png" type="Texture" id=5]
 
 [node name="game_manager" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="player" parent="." index="0" instance=ExtResource( 2 )]
+[node name="home_1" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( -135.005, 188.276 )
+[node name="player" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 48.0558, 2.44351 )
 stun = 0
 
-position = Vector2( -149.812, 61.7172 )
-stun = 3
+[node name="player2" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( -33.2212, 55.0317 )
+position = Vector2( -3.25803, 148.24 )
 play_two = true
-stun = 3
+stun = 0
 
-[node name="object" parent="." index="3" instance=ExtResource( 4 )]
+[node name="room_container" type="Node" parent="." index="3"]
 
-position = Vector2( -5.44147, 134.677 )
-
-[node name="room_container" type="Node" parent="." index="4"]
-
-script = ExtResource( 5 )
+editor/display_folded = true
+script = ExtResource( 4 )
 
 [node name="room_1" type="Node2D" parent="room_container" index="0"]
 
 editor/display_folded = true
-position = Vector2( 493.101, -18.3118 )
+position = Vector2( 495.914, -25.6247 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="box" type="Sprite" parent="room_container/room_1" index="0"]
 
 scale = Vector2( 0.616279, 0.616279 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="room_2" type="Node2D" parent="room_container" index="1"]
 
-position = Vector2( 1014.14, -29.6099 )
+editor/display_folded = true
+position = Vector2( 1024.99, -22.6101 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="box" type="Sprite" parent="room_container/room_2" index="0"]
+
+scale = Vector2( 0.616279, 0.616279 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="room_3" type="Node2D" parent="room_container" index="2"]
 
-position = Vector2( 503.367, 640.313 )
+editor/display_folded = true
+position = Vector2( 491.392, 628.56 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="box" type="Sprite" parent="room_container/room_3" index="0"]
+
+scale = Vector2( 0.616279, 0.616279 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="room_4" type="Node2D" parent="room_container" index="3"]
 
-position = Vector2( 1004.88, 638.462 )
+editor/display_folded = true
+position = Vector2( 1023.48, 628.56 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="object2" parent="." index="4" instance=ExtResource( 4 )]
+[node name="box" type="Sprite" parent="room_container/room_4" index="0"]
 
-position = Vector2( 564.142, 145.782 )
+scale = Vector2( 0.616279, 0.616279 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 
