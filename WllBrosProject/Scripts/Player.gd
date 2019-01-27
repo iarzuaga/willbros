@@ -112,22 +112,19 @@ func interact(object_grabbed, attacked):
 		if attacked:
 			interact_position = attacked.position
 			direction = attacked.direction
-		else:
-			interact_position = self.position
-			
-		object_grabbed[0].position = direction * drop_distance + interact_position
-		self.get_parent().add_child(object_grabbed[0])
-		
-		if vel_i and not throw_stun:
-			object_grabbed[0].acceleration = direction * throw_force
-			self.throw_stun = 4
-		
-		if attacked:
+			object_grabbed[0].position = direction * drop_distance + interact_position
+			self.get_parent().add_child(object_grabbed[0])
 			self.stun = 2
 			object_grabbed[0].acceleration = direction * throw_force
-			
+			object_grabbed.remove(0)
+		elif not throw_stun:
+			interact_position = self.position
+			object_grabbed[0].position = direction * drop_distance + interact_position
+			self.get_parent().add_child(object_grabbed[0])
+			object_grabbed[0].acceleration = direction * throw_force
+			object_grabbed.remove(0)
+			self.throw_stun = 3
 		
-		object_grabbed.remove(0)
 		
 	else:
 		if grab_zone.get_overlapping_bodies():
