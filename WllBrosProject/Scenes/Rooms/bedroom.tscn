@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Placeholder/floor.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Objects/bed.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/tv.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/shadow.tscn" type="PackedScene" id=4]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+"
+
+[node name="room_base" type="Node2D" index="0"]
+
+script = SubResource( 1 )
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 0, 3.25803 )
+scale = Vector2( 0.616279, 0.616279 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Transform", "Z Index" ]
+
+[node name="bed" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 211.892, 19.6069 )
+
+[node name="bed_2" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( -224.473, -67.065 )
+
+[node name="tv" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( -211.427, 75.5095 )
+
+[node name="shadow" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 0, -9.49523 )
+scale = Vector2( 1, 1.10382 )
+z_index = 2
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+

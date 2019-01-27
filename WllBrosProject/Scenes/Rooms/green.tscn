@@ -63,6 +63,8 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 0, -32.0596 )
 scale = Vector2( 1, 1.27314 )
-_sections_unfolded = [ "Visibility" ]
+z_index = 10
+z_as_relative = false
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 
