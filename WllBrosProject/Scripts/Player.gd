@@ -25,12 +25,16 @@ var velocity = Vector2(0, 0)
 var jump_stun = 0
 var throw_stun = 0
 
+var new_anim = "idle_down"
+var current_anim = ""
+var attack_started = false
 
 func _ready():
 	pass
  
 func _physics_process(delta):
-				
+	attack_started = false
+	
 	if stun:
 		stun -= delta
 		if  stun < 0:
@@ -49,7 +53,6 @@ func _physics_process(delta):
 	
 	if not stun:
 		if not play_two:
-		
 			if Input.is_action_pressed("up"):
 				vel_i.y -=1
 				
@@ -75,11 +78,11 @@ func _physics_process(delta):
 			if Input.is_action_pressed("right_2"):
 				vel_i.x +=1
 	
-	grab_zone.look_at(self.position)
 	
-	if vel_i != Vector2(0,0):
+	if vel_i:
 		direction = vel_i.normalized()
-		grab_zone.position = direction * grab_distance		
+		grab_zone.position = direction * grab_distance
+		grab_zone.look_at(self.position)
 		
 	vel_i = speed * vel_i.normalized()
 	
@@ -99,13 +102,68 @@ func _physics_process(delta):
 					jump_stun = jump_coldown
 		else:
 			if Input.is_action_just_pressed("Attack"):
+				attack_started = true
 				if not self.jump_stun:
 					attack()
 					jump_stun = jump_coldown
-			
+	
 	velocity.x = lerp(velocity.x, vel_i.x, 0.1)
 	velocity.y = lerp(velocity.y, vel_i.y, 0.1)
 	move_and_slide(velocity, Vector2(0,0), 25.0)
+	
+	$sprite.flip_h = false
+	
+	## ======= Animations =======
+	
+	if velocity == Vector2(0, 0):
+		new_anim = "idle_"
+		
+		if direction.x != 0:
+			new_anim += "side"
+			if direction.x < 0:
+				$sprite.flip_h = true
+			
+		elif direction.y != 0:
+			if direction.y < 0:
+				new_anim += "up"
+				
+			elif direction.y > 0:
+				new_anim += "down"
+	
+	else:
+		new_anim = "walk_"
+		
+		if direction.x != 0:
+			new_anim += "side"
+			if direction.x < 0:
+				$sprite.flip_h = true
+			
+		elif direction.y != 0:
+			if direction.y < 0:
+				new_anim += "up"
+				
+			elif direction.y > 0:
+				new_anim += "down"
+	
+	if object_grabbed:
+		new_anim += "_lift"
+		
+		if direction.x != 0:
+			object_grabbed[0].sprite_direction = 1
+			if direction.x < 0:
+				object_grabbed[0].sprite_direction = 3
+			
+		elif direction.y != 0:
+			if direction.y < 0:
+				object_grabbed[0].sprite_direction = 0
+				
+			elif direction.y > 0:
+				object_grabbed[0].sprite_direction = 2
+	
+	if current_anim != new_anim:
+		$anim.play(new_anim)
+		current_anim = new_anim
+	
 	
 func interact(object_grabbed, attacked):
 	var interact_position
@@ -121,7 +179,7 @@ func interact(object_grabbed, attacked):
 			self.stun = stun_duration
 			object_grabbed[0].position = direction * drop_distance.x + interact_position
 			object_grabbed[0].acceleration = direction * throw_force
-			object_grabbed[0].remove(0)
+			object_grabbed.remove(0)
 		
 		elif not throw_stun:
 			interact_position = self.position

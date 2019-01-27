@@ -2,8 +2,8 @@
 
 [resource]
 
-resource_name = "push_down"
-length = 0.1
+resource_name = "idle_side"
+length = 0.01
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -16,6 +16,6 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 14 ]
 }
 
