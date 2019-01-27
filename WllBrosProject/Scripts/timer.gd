@@ -1,7 +1,7 @@
 extends RichTextLabel
 
-var second = 59
-var minute = 2
+var second = 1
+var minute = 0
 
 func _process(delta):
 	if second < 0:
