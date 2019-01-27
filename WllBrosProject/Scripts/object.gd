@@ -4,15 +4,67 @@ export var value = 0
 export var object_name = ""
 export var object_weight = 0
 
+export var change_collider = false
+export var invert_h = false
+export var sprite_direction = 0
+"""
+	0 - up
+	1 - right
+	2 - down
+	3 - left
+"""
+
 var acceleration = Vector2(0,0)
 var velocity = Vector2(0,0)
 var direction = Vector2(1,0)
 
+var old_sprite_direction = null
+
 func _ready():
-	pass
+	if change_collider:
+		if $col_0: $col_0.disabled = true
+		if $col_1: $col_1.disabled = true
+		if $col_2: $col_2.disabled = true
+		if $col_3: $col_3.disabled = true
+	
+	if $tmp_sprite:
+		self.remove_child($tmp_sprite)
+
+func set_collider(col):
+	if change_collider:
+		if $col_0: $col_0.disabled = true
+		if $col_1: $col_1.disabled = true
+		if $col_2: $col_2.disabled = true
+		if $col_3: $col_3.disabled = true
+		col.disabled = false
 
 func _process(delta):
-	pass
+	if sprite_direction != old_sprite_direction:
+		if invert_h:
+			$sprite.flip_h = false
+		else:
+			$sprite.flip_h = true
+				
+		if sprite_direction == 3:
+			sprite_direction = 1
+			
+			if invert_h:
+				$sprite.flip_h = true
+			else:
+				$sprite.flip_h = false
+		
+		if sprite_direction == 0:
+			$sprite.frame = 2
+			if $col_0: set_collider($col_0)
+		
+		elif sprite_direction == 1:
+			$sprite.frame = 1
+			if $col_0: set_collider($col_1)
+		
+		elif sprite_direction == 2:
+			$sprite.frame = 0
+			if $col_0: set_collider($col_2)
+		
 
 func _physics_process(delta):
 	var deceleration = Vector2()

@@ -33,7 +33,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="home_1" type="Node" index="0"]
+[node name="home_1" type="Node"]
 
 [node name="camera" type="Camera2D" parent="." index="0"]
 
@@ -103,11 +103,13 @@ texture = ExtResource( 1 )
 
 position = Vector2( -151.543, 19.3753 )
 scale = Vector2( 3.04813, 1 )
+z_index = -10
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 2 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="truck" index="0"]
 
@@ -181,12 +183,13 @@ _sections_unfolded = [ "Visibility", "custom_fonts" ]
 position = Vector2( -151.159, 570.859 )
 rotation = 3.14159
 scale = Vector2( 3.04813, 1 )
+z_index = -10
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+script = ExtResource( 3 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="truck2" index="0"]
 
