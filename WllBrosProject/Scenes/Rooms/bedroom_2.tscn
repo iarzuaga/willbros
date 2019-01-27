@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/room.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Cuarto.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Objects/wardrobe.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/plushie.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/couch_big.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/bed_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/tv_red.tscn" type="PackedScene" id=7]
+
+[node name="room_base" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Cuarto" type="Sprite" parent="." index="0"]
+
+z_index = -10
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Wardrobe" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 229.242, 25.6969 )
+sprite_direction = 3
+
+[node name="Big Old Bingus" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( -127.603, 93.3538 )
+
+[node name="Big Couch" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( -183.884, -121.591 )
+sprite_direction = 2
+
+[node name="Godly bed" parent="." index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 232.381, -105.571 )
+sprite_direction = 2
+
+[node name="Shiny Tv" parent="." index="5" instance=ExtResource( 7 )]
+
+position = Vector2( -204.84, 66.4108 )
+
+
