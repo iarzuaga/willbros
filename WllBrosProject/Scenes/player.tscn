@@ -14,7 +14,9 @@ extents = Vector2( 10, 15.7097 )
 custom_solver_bias = 0.0
 extents = Vector2( 7.12863, 21.019 )
 
-[node name="player" type="KinematicBody2D" index="0"]
+[node name="player" type="KinematicBody2D" index="0" groups=[
+"brother",
+]]
 
 input_pickable = false
 collision_layer = 1
@@ -27,6 +29,7 @@ speed = 1800
 grab_distance = 50
 drop_distance = 60
 throw_force = 500
+play_two = false
 
 [node name="sprite" type="Sprite" parent="." index="0"]
 
@@ -71,7 +74,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="collision_render" type="Sprite" parent="pick_area" index="1"]
 
-visible = false
+position = Vector2( -0.0968895, -0.182941 )
 scale = Vector2( 0.443758, 1 )
 texture = ExtResource( 3 )
 

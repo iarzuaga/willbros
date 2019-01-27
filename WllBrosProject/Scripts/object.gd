@@ -6,6 +6,7 @@ export var object_weight = 0
 
 var acceleration = Vector2(0,0)
 var velocity = Vector2(0,0)
+var direction = Vector2(1,0)
 
 func _ready():
 	pass
@@ -24,4 +25,17 @@ func _physics_process(delta):
 		if velocity.x != 0:
 			deceleration.x = velocity.x * delta * 2
 		velocity = velocity - deceleration
+		var object_person_collision = self.get_slide_collision(get_slide_count()-1)
+		if object_person_collision:
+			var brother_full = object_person_collision.get_collider_shape().get_parent()
+			if  brother_full.is_in_group("brother"):
+				if brother_full.object_grabbed:
+					brother_full.move_and_slide(velocity)
+					self.direction = deceleration.normalized()
+					brother_full.interact(brother_full.object_grabbed, self)
+				else:
+					brother_full.move_and_slide(velocity)
+					brother_full.stun = 2
+					
+			
 		self.move_and_slide(velocity)
