@@ -11,9 +11,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Pause"):
 		print(paused)
 		if not paused:
+			self.show()
 			pause_game()
 			paused = !paused
 		else:
+			self.hide()
 			resume_game()
 			paused = !paused
 			
