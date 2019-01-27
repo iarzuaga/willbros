@@ -12,3 +12,4 @@ func _process(delta):
 		  var value = obj[0].value
 		  score += value
 		  obj[0].get_parent().remove_child(obj[0])
+		  $points.set_score(score)
