@@ -1,39 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Placeholder/caja placeholders.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/blutarch.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/redmond.png" type="Texture" id=4]
-[ext_resource path="res://Fonts/DS-DIGIT.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/introbluecolored.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/introredcolored.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/intro.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/introbothcolored.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/press a v2.png" type="Texture" id=6]
 
-[sub_resource type="DynamicFont" id=1]
-
-size = 70
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 5 )
-_sections_unfolded = [ "Settings" ]
-
-[sub_resource type="Animation" id=2]
-
-resource_name = "obscure"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0, 0 ]
-}
-
-[node name="Menu" type="Node" index="0"]
+[node name="Menu" type="Node"]
 
 script = ExtResource( 1 )
 press1 = false
@@ -47,90 +21,52 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="obsc1" type="Sprite" parent="CanvasLayer" index="0"]
+[node name="blue" type="Sprite" parent="CanvasLayer" index="0"]
 
 visible = false
-position = Vector2( 562.665, 495.09 )
-scale = Vector2( 18.5335, 21.9118 )
+position = Vector2( 966.803, 600.631 )
+scale = Vector2( 1.00306, 1.12725 )
 z_index = -1
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="obsc2" type="Sprite" parent="CanvasLayer" index="1"]
+[node name="red" type="Sprite" parent="CanvasLayer" index="1"]
 
 visible = false
-position = Vector2( 1285.88, 495.09 )
-scale = Vector2( 18.5335, 21.9118 )
+position = Vector2( 966.803, 600.631 )
+scale = Vector2( 1.00306, 1.12725 )
 z_index = -1
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
-
-[node name="sprite" type="Sprite" parent="CanvasLayer" index="2"]
-
-position = Vector2( 560.931, 505.63 )
-scale = Vector2( 1.66123, 1.66123 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="sprite2" type="Sprite" parent="CanvasLayer" index="3"]
+[node name="none" type="Sprite" parent="CanvasLayer" index="2"]
 
-position = Vector2( 1292.02, 499.597 )
-scale = Vector2( 1.53354, 1.74641 )
+position = Vector2( 966.803, 600.631 )
+scale = Vector2( 1.00306, 1.12725 )
+z_index = -2
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Label" type="Label" parent="CanvasLayer" index="4"]
+[node name="go" type="Sprite" parent="CanvasLayer" index="3"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 282.0
-margin_top = 889.0
-margin_right = 881.0
-margin_bottom = 960.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
-text = "Press \"A\" to select"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+visible = false
+position = Vector2( 966.803, 600.631 )
+scale = Vector2( 1.00306, 1.12725 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Label2" type="Label" parent="CanvasLayer" index="5"]
+[node name="press1" type="Sprite" parent="CanvasLayer" index="4"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 1026.0
-margin_top = 888.0
-margin_right = 1625.0
-margin_bottom = 959.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 1 )
-text = "Press \"A\" to select"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
+position = Vector2( 550.269, 1000.27 )
+scale = Vector2( 1.79099, 1.79099 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="anim" type="AnimationPlayer" parent="CanvasLayer" index="6"]
+[node name="press" type="Sprite" parent="CanvasLayer" index="5"]
 
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/obscure = SubResource( 2 )
-blend_times = [  ]
+position = Vector2( 1391.75, 1000.27 )
+scale = Vector2( 1.79099, 1.791 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
 
 
