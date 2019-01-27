@@ -25,10 +25,12 @@ var velocity = Vector2(0, 0)
 var jump_stun = 0
 var throw_stun = 0
 
+
 func _ready():
 	pass
  
 func _physics_process(delta):
+				
 	if stun:
 		stun -= delta
 		if  stun < 0:

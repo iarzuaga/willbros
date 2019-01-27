@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/game_manager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Rooms/house.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/room_randomizer.gd" type="Script" id=4]
 [ext_resource path="res://Sprites/Placeholder/box.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/pause.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/pause.gd" type="Script" id=7]
 
-[node name="game_manager" type="Node" index="0"]
+[node name="game_manager" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -72,6 +74,13 @@ scale = Vector2( 0.616279, 0.616279 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="object_master" type="Node" parent="." index="4"]
+[node name="pause" type="Sprite" parent="." index="4"]
 
+pause_mode = 2
+visible = false
+position = Vector2( 510, 298 )
+texture = ExtResource( 6 )
+script = ExtResource( 7 )
+_sections_unfolded = [ "Material", "Pause", "Visibility" ]
 
+[node name="object_master" type="Node" parent="." index="5"]
