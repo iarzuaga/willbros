@@ -23,7 +23,6 @@ window/size/width=1920
 window/size/height=1080
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
-run/main_scene="res://Scripts/stage.tscn"
 config/icon="res://icon.png"
 
 [input]
