@@ -11,4 +11,7 @@ Federico Franco As Lead Designer / Minor Artist <br/>
 <br/>
 And with the collaboration of: <br/>
 <br/>
-Federico Ríos As composer
+Federico Ríos As composer <br/>
+ <br/>
+Link for the jam entry for member and extra info: <br/>
+https://globalgamejam.org/2019/games/super-will-bros
