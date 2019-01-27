@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/tutorial.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/press a v2.png" type="Texture" id=3]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 

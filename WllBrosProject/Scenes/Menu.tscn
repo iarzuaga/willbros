@@ -1,12 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
+
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/introbluecolored.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/introredcolored.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/intro.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/introbothcolored.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/press a v2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/titulo.png" type="Texture" id=7]
 
-[node name="Menu" type="Node"]
+[node name="Menu" type="Node" index="0"]
 
 script = ExtResource( 1 )
 press1 = false
@@ -67,5 +69,11 @@ position = Vector2( 1391.75, 1000.27 )
 scale = Vector2( 1.79099, 1.791 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer" index="6"]
+
+position = Vector2( 166.196, 257.814 )
+scale = Vector2( 1.04425, 1.02134 )
+texture = ExtResource( 7 )
 
 

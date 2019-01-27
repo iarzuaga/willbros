@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tema movido.wav-30d3d1ef2d7b54bbab8db7dafafdaeb9.sample"
+
+[deps]
+
+source_file="res://Sound/Tema movido.wav"
+dest_files=[ "res://.import/Tema movido.wav-30d3d1ef2d7b54bbab8db7dafafdaeb9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

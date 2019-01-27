@@ -9,7 +9,6 @@ func _process(delta):
 		shown = true
 		set_data()
 
-
 #@param score int (puntos dentro de truck al final del tiempo)
 #@param score1 int (puntos dentro de truck2 al final del tiempo)
 #@param objects array (todos los objetos que entraron en el camion del ganador)
