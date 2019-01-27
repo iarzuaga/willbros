@@ -1,10 +1,10 @@
 # Super Will Bros
 Mabe by NTFANS (No Time For A Name Selection), a team made for the Global Game Jam 2019
 
-Composed of:
+Composed of: <br/>
 Daril Rodriguez As Lead Developer / Minor game designer <br/>
-Ignacio Arzuaga (@hopeful.midas) As support Developer <br/>
-Sebastian Gomez As Support Developer <br/>
+Ignacio Arzuaga (@hopeful.midas in IG) As support Developer <br/>
+Sebastian Gomez (@sebastian.g.toulier in IG) As Support Developer <br/>
 Eric Silva As Artist <br/>
 Jorge Tuset As Artist <br/>
 Federico Franco As Lead Designer / Minor Artist <br/>
